@@ -3,7 +3,7 @@ In-memory data store with seed data for SmartSurplus demo.
 All data is stored in Python dicts and resets on server restart.
 """
 import uuid
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Optional, List
 from app.core.auth import hash_password
 
@@ -210,11 +210,25 @@ class InMemoryDB:
         ]
 
         ngo_ids = []
-        for n in ngos:
+        # Fictional demo availability is explicit kg data, independent of people/day capacity.
+        demo_kg = [85, 60, 35, 70, 160, 45, 55, 110, 25, 75]
+        demo_now = datetime.now(timezone.utc)
+        for index, n in enumerate(ngos):
             user = self.add_user({
                 **n, "password": "pass123", "role": "ngo",
                 "phone": "97" + str(hash(n["username"]))[-8:].replace("-", "0"),
                 "cuisine_type": None, "provider_type": None,
+                "donation_availability": {
+                    "accepting": True, "available_capacity_kg": demo_kg[index],
+                    "demand_kg": demo_kg[index],
+                    "accepted_categories": ['grain','bread','protein','vegetable','dairy','fruit','soup','dessert'],
+                    "vegetarian_only": index in [2,4],
+                    "storage_capabilities": ['ambient','cold_storage','hot_holding'] if index in [0,3,4,7] else ['ambient','hot_holding'],
+                    "receiving_start_at": demo_now.isoformat(),
+                    "receiving_end_at": (demo_now + timedelta(hours=12)).isoformat(),
+                    "unloading_minutes": 5,
+                    "report_updated_at": demo_now.isoformat(), "source": "seeded_demo",
+                },
             })
             ngo_ids.append(user["id"])
 

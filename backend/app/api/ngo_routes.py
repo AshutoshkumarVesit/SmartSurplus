@@ -27,6 +27,8 @@ async def accept_match(action: MatchAction, current_user: dict = Depends(require
 
     new_status = "accepted" if action.action == "accept" else "rejected"
     updated = db.update_match_status(action.match_id, new_status)
+    from datetime import datetime, timezone
+    updated['response_recorded_at'] = datetime.now(timezone.utc).isoformat()
 
     db.add_log({
         "match_id": action.match_id,

@@ -5,6 +5,7 @@
 
 import type { WasteInfo, WasteBenchmark, WasteExample, WasteForecastRequest, WasteForecast } from './measured-waste';
 import type { RankingInfo, RankingExample, RankingSnapshot, RankingMethod, RankResult } from './ngo-ranking';
+import type { Registry, MatchInput, PlatformRank, RegisteredNGO, AvailabilityInput } from './platform-matching';
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api';
 
@@ -90,6 +91,10 @@ export const api = {
   getFoodData: () => request('/food-data'),
   getPredictions: () => request('/predictions'),
   runPrediction: () => request('/predict', { method: 'POST' }),
+  getRegisteredNGOs: (): Promise<Registry> => request('/provider/ngo-matching'),
+  rankRegisteredNGOs: (data: MatchInput): Promise<PlatformRank> => request('/provider/ngo-matching/rank', { method: 'POST', body: JSON.stringify(data) }),
+  getNGOAvailability: (): Promise<RegisteredNGO> => request('/ngo/availability'),
+  updateNGOAvailability: (data: AvailabilityInput): Promise<RegisteredNGO> => request('/ngo/availability', { method: 'PUT', body: JSON.stringify(data) }),
 
   // Measured kitchen + serving waste: independent research, no donation writes.
   getWasteInfo: (): Promise<WasteInfo> => request('/research/waste/info'),

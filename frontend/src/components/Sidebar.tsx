@@ -12,13 +12,15 @@ export const navigation: Record<string, NavItem[]> = {
     { label: 'Overview', icon: 'grid', href: '/dashboard/provider' },
     { label: 'Food preparation', icon: 'plus', href: '/dashboard/provider/upload' },
     { label: 'Surplus predictions', icon: 'chart', href: '/dashboard/provider/predictions' },
+    { label: 'NGO matching', icon: 'heart', href: '/dashboard/provider/matching' },
     { label: 'Network map', icon: 'map', href: '/map' },
     { label: 'Measured waste', icon: 'chart', href: '/dashboard/provider/research', research: true },
-    { label: 'NGO matching lab', icon: 'heart', href: '/dashboard/provider/matching', research: true },
+    { label: 'NGO matching lab', icon: 'heart', href: '/dashboard/provider/matching/research', research: true },
   ],
   ngo: [
     { label: 'Overview', icon: 'grid', href: '/dashboard/ngo' },
     { label: 'Food matches', icon: 'heart', href: '/dashboard/ngo/matches' },
+    { label: 'My availability', icon: 'clock', href: '/dashboard/ngo/availability' },
     { label: 'Network map', icon: 'map', href: '/map' },
   ],
   admin: [
@@ -27,7 +29,7 @@ export const navigation: Record<string, NavItem[]> = {
     { label: 'Redistribution log', icon: 'list', href: '/dashboard/admin/logs' },
     { label: 'Network map', icon: 'map', href: '/map' },
     { label: 'Measured waste', icon: 'chart', href: '/dashboard/provider/research', research: true },
-    { label: 'NGO matching lab', icon: 'heart', href: '/dashboard/provider/matching', research: true },
+    { label: 'NGO matching lab', icon: 'heart', href: '/dashboard/provider/matching/research', research: true },
   ],
 };
 export default function Sidebar({ open = false, onClose = () => {} }: { open?: boolean; onClose?: () => void }) {

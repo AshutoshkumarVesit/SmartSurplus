@@ -30,3 +30,13 @@ backend/.venv/Scripts/python.exe -m unittest discover -s backend/tests -p 'test_
 ```
 
 Some parity tests also require the existing local `DataSet/` research inputs. These inputs are not replaced by the runtime fix. The API's in-memory demo data resets on server restart.
+
+## Registered NGO recommendations
+
+Providers use `GET /api/provider/ngo-matching` and `POST /api/provider/ngo-matching/rank`. Candidate IDs, names and positions come from registered NGO accounts. The server builds the existing trained-model feature contract from confirmed food inputs, NGO availability and explicit provider-delivery assumptions. Neither predicted surplus nor people/day capacity is silently converted into donatable or available kilograms.
+
+NGOs use their own `GET/PUT /api/ngo/availability` profile to report currently available kg (after commitments), demand, accepted categories, dietary/storage capability, receiving hours and unloading time. Saving sets a server timestamp. Reports older than two hours, missing locations and incompatible or insufficient resources cannot produce a recommendation. The platform additionally excludes model ETAs outside declared windows. It ranks all registered NGOs, batching inference for directories over 100 entries.
+
+The ten seeded demo NGOs have explicit, labelled demo kg availability; these are not verified real-world NGO reports. New registrations have no inferred kg capacity until their NGO account reports it. Prior recipient response rates use only recorded, past platform responses; absent history stays missing for training imputation. Travel uses a disclosed distance multiplier and speed/traffic assumptions, not a live routing service. Provider-arranged transport starts at the donor location; no courier history is invented.
+
+Results are proposals only. They send no pickup request, create no match, reserve no capacity and certify no food safety. Research benchmark routes and published model results remain separate. Data remains in the existing in-memory demo database and resets on restart.

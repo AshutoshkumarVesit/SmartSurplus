@@ -34,9 +34,11 @@ The production build also runs the Next.js core web vitals lint checks. Preview 
 - `/dashboard/provider/upload`: food preparation form, with optional demand history when supported by the API.
 - `/dashboard/provider/predictions`: surplus estimates and synthetic calibration intervals.
 - `/dashboard/provider/research`: separate real measured kitchen + serving waste benchmark.
-- `/dashboard/provider/matching`: separate NGO ranking experiment using confirmed donation inputs.
+- `/dashboard/provider/matching`: registered NGO directory and model-ranked recommendations for confirmed food.
+- `/dashboard/provider/matching/research`: separate synthetic NGO ranking benchmark and JSON experiment tools.
 - `/dashboard/ngo`: offers, responses and actual received quantity confirmation.
 - `/dashboard/ngo/matches`: match history.
+- `/dashboard/ngo/availability`: NGO-reported kg capacity, demand, food/storage preferences and receiving windows.
 - `/dashboard/admin`: network summary, partners and redistribution logs.
 - `/map`: reported provider/NGO locations and surplus hotspots.
 
