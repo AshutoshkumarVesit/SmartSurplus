@@ -1,0 +1,171 @@
+{
+  "target": "combined_kitchen_and_serving_waste_kg",
+  "unit": "kg/day",
+  "scope": "research_only_single_source",
+  "default_method": "LightGBM",
+  "default_selection": "Lowest chronological validation MAE, including predeclared baselines; not test ranking",
+  "validation_mae_kg": {
+    "RandomForest": 3.974999616115609,
+    "LightGBM": 3.2355667314453815,
+    "TrainingMedian": 3.5848,
+    "Past5DayMean": 3.6804,
+    "PreviousMeasuredDay": 4.8232
+  },
+  "training_median_kg": 6.18,
+  "source": {
+    "title": "Food waste dataset: secondary school in Finland 2024-2025",
+    "doi": "10.5281/zenodo.20825233",
+    "url": "https://zenodo.org/records/20825233",
+    "license": "CC BY 4.0",
+    "authors": "Arja Kuusisto, Jenni Latva and Ella Wilen",
+    "downloaded_sha256": "2ffad746b7ed5d536a0c99c37d8e249230d95d5fb2d041d85d01b69499f99624",
+    "rows": 155
+  },
+  "split": {
+    "history_days": 20,
+    "train_days": 80,
+    "validation_days": 25,
+    "test_days": 30,
+    "test_start": "2025-03-03",
+    "test_end": "2025-04-11",
+    "intervention_test_days": 20
+  },
+  "test_results": [
+    {
+      "segment": "all_test",
+      "method": "RandomForest",
+      "rows": 30,
+      "mae_kg": 5.330029820499467,
+      "rmse_kg": 5.8139144149106965,
+      "r2": -0.6308803878217015
+    },
+    {
+      "segment": "baseline_test",
+      "method": "RandomForest",
+      "rows": 10,
+      "mae_kg": 5.537650973304402,
+      "rmse_kg": 6.306856862717678,
+      "r2": -0.08920766192771734
+    },
+    {
+      "segment": "intervention_test",
+      "method": "RandomForest",
+      "rows": 20,
+      "mae_kg": 5.226219244096997,
+      "rmse_kg": 5.551052106804172,
+      "r2": -2.703449292396403
+    },
+    {
+      "segment": "all_test",
+      "method": "LightGBM",
+      "rows": 30,
+      "mae_kg": 4.159172543874206,
+      "rmse_kg": 4.9640897710514755,
+      "r2": -0.18895137886133107
+    },
+    {
+      "segment": "baseline_test",
+      "method": "LightGBM",
+      "rows": 10,
+      "mae_kg": 4.681213785625391,
+      "rmse_kg": 5.953834511352806,
+      "r2": 0.029315137961779758
+    },
+    {
+      "segment": "intervention_test",
+      "method": "LightGBM",
+      "rows": 20,
+      "mae_kg": 3.8981519229986135,
+      "rmse_kg": 4.38625218019883,
+      "r2": -1.3122936623598607
+    },
+    {
+      "segment": "all_test",
+      "method": "TrainingMedian",
+      "rows": 30,
+      "mae_kg": 3.7813333333333334,
+      "rmse_kg": 4.735652014242601,
+      "r2": -0.08204271507688121
+    },
+    {
+      "segment": "baseline_test",
+      "method": "TrainingMedian",
+      "rows": 10,
+      "mae_kg": 4.438,
+      "rmse_kg": 6.151146234646027,
+      "r2": -0.03608847369577495
+    },
+    {
+      "segment": "intervention_test",
+      "method": "TrainingMedian",
+      "rows": 20,
+      "mae_kg": 3.4530000000000003,
+      "rmse_kg": 3.8368346328712155,
+      "r2": -0.7693019566366996
+    },
+    {
+      "segment": "all_test",
+      "method": "PreviousMeasuredDay",
+      "rows": 30,
+      "mae_kg": 4.441999999999999,
+      "rmse_kg": 6.6776807351055645,
+      "r2": -1.1514742074489681
+    },
+    {
+      "segment": "baseline_test",
+      "method": "PreviousMeasuredDay",
+      "rows": 10,
+      "mae_kg": 8.356,
+      "rmse_kg": 10.345105122713832,
+      "r2": -1.9305865685894146
+    },
+    {
+      "segment": "intervention_test",
+      "method": "PreviousMeasuredDay",
+      "rows": 20,
+      "mae_kg": 2.485,
+      "rmse_kg": 3.6573938808938804,
+      "r2": -0.607678717369357
+    },
+    {
+      "segment": "all_test",
+      "method": "Past5DayMean",
+      "rows": 30,
+      "mae_kg": 3.3614000000000006,
+      "rmse_kg": 4.752221417400499,
+      "r2": -0.08962780247249058
+    },
+    {
+      "segment": "baseline_test",
+      "method": "Past5DayMean",
+      "rows": 10,
+      "mae_kg": 5.9098,
+      "rmse_kg": 6.848674061451603,
+      "r2": -0.28439242189808756
+    },
+    {
+      "segment": "intervention_test",
+      "method": "Past5DayMean",
+      "rows": 20,
+      "mae_kg": 2.0872,
+      "rmse_kg": 3.2285049790886187,
+      "r2": -0.2527335705014182
+    }
+  ],
+  "test_status": "Previously evaluated V4 holdout; reproduced, not a new independent test",
+  "target_boundaries": {
+    "pure_surplus": false,
+    "donatable_quantity": false,
+    "ngo_matching": false,
+    "spoilage_prediction": false
+  },
+  "limitations": [
+    "Single Finnish school; very small sample",
+    "Target combines kitchen and serving waste; includes material that is not donatable",
+    "Prepared mass and NGO/delivery records are absent",
+    "Same-day prepared quantity is unavailable, so this is a reduced separate forecasting task",
+    "Last 20 days have an intervention; distribution shift can affect performance",
+    "No claim of Indian-platform or NGO-routing generalisation"
+  ],
+  "missing_target_policy": "One missing KSW on 2024-09-02, in history warmup. Never fabricate a target. Rolling histories skip missing values; remaining feature gaps use training median imputation."
+}

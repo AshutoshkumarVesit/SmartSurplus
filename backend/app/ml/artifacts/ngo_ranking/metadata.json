@@ -1,0 +1,491 @@
+{
+  "default_policy": "LightGBM",
+  "data_origin": "synthetic",
+  "target": "fraction_of_confirmed_offer_received_within_declared_windows",
+  "model_components": [
+    "expected_received_fraction",
+    "elapsed_minutes"
+  ],
+  "features": [
+    "quantity_kg",
+    "route_distance_km",
+    "approach_minutes",
+    "queue_minutes",
+    "travel_minutes",
+    "loading_minutes",
+    "unloading_minutes",
+    "ready_minutes",
+    "pickup_remaining_minutes",
+    "delivery_remaining_minutes",
+    "open_minutes",
+    "close_minutes",
+    "shift_remaining_minutes",
+    "report_age_minutes",
+    "recipient_acceptance_rate",
+    "recipient_history_count",
+    "courier_ontime_rate",
+    "courier_history_count",
+    "rain_mm",
+    "temperature_c",
+    "traffic_index",
+    "demand_kg",
+    "capacity_ratio",
+    "demand_ratio",
+    "nominal_elapsed_minutes",
+    "deadline_slack_minutes",
+    "required_cold",
+    "required_hot"
+  ],
+  "feature_support": {
+    "quantity_kg": {
+      "min": 0.891,
+      "max": 60.044
+    },
+    "route_distance_km": {
+      "min": 0.0982039651378971,
+      "max": 34.44181894173542
+    },
+    "approach_minutes": {
+      "min": 1.0277901952219184,
+      "max": 29.407341379572816
+    },
+    "queue_minutes": {
+      "min": 0.0,
+      "max": 42.016666666666666
+    },
+    "travel_minutes": {
+      "min": 2.375026930790684,
+      "max": 122.38037965374352
+    },
+    "loading_minutes": {
+      "min": 3.891948105546849,
+      "max": 8.756232881880079
+    },
+    "unloading_minutes": {
+      "min": 3.2938984212803715,
+      "max": 11.081752789788252
+    },
+    "ready_minutes": {
+      "min": 0.0,
+      "max": 12.0
+    },
+    "pickup_remaining_minutes": {
+      "min": 20.2,
+      "max": 76.09999999999998
+    },
+    "delivery_remaining_minutes": {
+      "min": 55.05,
+      "max": 149.98333333333332
+    },
+    "open_minutes": {
+      "min": -44.98333333333333,
+      "max": 25.0
+    },
+    "close_minutes": {
+      "min": 50.016666666666666,
+      "max": 209.96666666666667
+    },
+    "shift_remaining_minutes": {
+      "min": 80.01666666666665,
+      "max": 240.0
+    },
+    "report_age_minutes": {
+      "min": -0.0,
+      "max": 80.0
+    },
+    "recipient_acceptance_rate": {
+      "min": 0.1333333333333333,
+      "max": 0.9888888888888888
+    },
+    "recipient_history_count": {
+      "min": 12.0,
+      "max": 100.0
+    },
+    "courier_ontime_rate": {
+      "min": 0.3529411764705882,
+      "max": 0.9901960784313724
+    },
+    "courier_history_count": {
+      "min": 10.0,
+      "max": 100.0
+    },
+    "rain_mm": {
+      "min": 0.0,
+      "max": 81.82991010988822
+    },
+    "temperature_c": {
+      "min": 11.288067659365472,
+      "max": 42.58537183741572
+    },
+    "traffic_index": {
+      "min": 1.0004322249772102,
+      "max": 2.3005288261634926
+    },
+    "demand_kg": {
+      "min": 0.5821252750176977,
+      "max": 126.47700940653316
+    },
+    "capacity_ratio": {
+      "min": 1.00022948174258,
+      "max": 53.2452827368358
+    },
+    "demand_ratio": {
+      "min": 0.2140697752652071,
+      "max": 67.21163476908532
+    },
+    "nominal_elapsed_minutes": {
+      "min": 16.229149455811307,
+      "max": 143.43875283926562
+    },
+    "deadline_slack_minutes": {
+      "min": 0.0114923175527508,
+      "max": 127.51428311169634
+    },
+    "required_cold": {
+      "min": 0.0,
+      "max": 1.0
+    },
+    "required_hot": {
+      "min": 0.0,
+      "max": 1.0
+    }
+  },
+  "rows": 60000,
+  "offers": 6000,
+  "options_per_offer": 10,
+  "split": {
+    "train_rows": 42000,
+    "validation_rows": 9000,
+    "test_rows": 9000
+  },
+  "selection": "Within family validation fraction RMSE; default maximum validation received kg across gated policies",
+  "policy_results": [
+    {
+      "method": "RandomForest",
+      "offers": 900,
+      "selected": 784,
+      "unmatched": 116,
+      "received_kg": 6033.133057490052,
+      "offered_kg": 10627.184000000001,
+      "received_share": 0.5677075937981362,
+      "mean_received_kg_per_offer": 6.703481174988947,
+      "positive_receipt_share": 0.7144444444444444,
+      "constraint_violations": 0,
+      "hindsight_oracle_gap_kg_per_offer": 1.078088389440912,
+      "selected_mean_actual_minutes": 51.6828758222028,
+      "population": "chronological_test"
+    },
+    {
+      "method": "LightGBM",
+      "offers": 900,
+      "selected": 784,
+      "unmatched": 116,
+      "received_kg": 6064.288182155068,
+      "offered_kg": 10627.184000000001,
+      "received_share": 0.5706392382172989,
+      "mean_received_kg_per_offer": 6.738097980172298,
+      "positive_receipt_share": 0.7144444444444444,
+      "constraint_violations": 0,
+      "hindsight_oracle_gap_kg_per_offer": 1.0434715842575608,
+      "selected_mean_actual_minutes": 51.9624853575182,
+      "population": "chronological_test"
+    },
+    {
+      "method": "NearestFeasible",
+      "offers": 900,
+      "selected": 784,
+      "unmatched": 116,
+      "received_kg": 5644.326036352737,
+      "offered_kg": 10627.184000000001,
+      "received_share": 0.5311215121854234,
+      "mean_received_kg_per_offer": 6.2714733737252635,
+      "positive_receipt_share": 0.7011111111111111,
+      "constraint_violations": 0,
+      "hindsight_oracle_gap_kg_per_offer": 1.5100961907045956,
+      "selected_mean_actual_minutes": 46.68853660654902,
+      "population": "chronological_test"
+    },
+    {
+      "method": "EarliestFeasible",
+      "offers": 900,
+      "selected": 784,
+      "unmatched": 116,
+      "received_kg": 5675.3330569643385,
+      "offered_kg": 10627.184000000001,
+      "received_share": 0.5340392202642147,
+      "mean_received_kg_per_offer": 6.305925618849265,
+      "positive_receipt_share": 0.6988888888888889,
+      "constraint_violations": 0,
+      "hindsight_oracle_gap_kg_per_offer": 1.4756439455805936,
+      "selected_mean_actual_minutes": 45.157920424360476,
+      "population": "chronological_test"
+    },
+    {
+      "method": "HistoryDemand",
+      "offers": 900,
+      "selected": 784,
+      "unmatched": 116,
+      "received_kg": 6040.20235030756,
+      "offered_kg": 10627.184000000001,
+      "received_share": 0.5683728022689322,
+      "mean_received_kg_per_offer": 6.711335944786177,
+      "positive_receipt_share": 0.7133333333333334,
+      "constraint_violations": 0,
+      "hindsight_oracle_gap_kg_per_offer": 1.0702336196436812,
+      "selected_mean_actual_minutes": 54.61270310902106,
+      "population": "chronological_test"
+    },
+    {
+      "method": "NearestUnfiltered",
+      "offers": 900,
+      "selected": 900,
+      "unmatched": 0,
+      "received_kg": 2387.4504334430094,
+      "offered_kg": 10627.184000000001,
+      "received_share": 0.2246550387612569,
+      "mean_received_kg_per_offer": 2.652722703825566,
+      "positive_receipt_share": 0.3333333333333333,
+      "constraint_violations": 534,
+      "hindsight_oracle_gap_kg_per_offer": 5.128846860604293,
+      "selected_mean_actual_minutes": 42.07196638778061,
+      "population": "chronological_test"
+    },
+    {
+      "method": "RandomForest",
+      "offers": 1000,
+      "selected": 879,
+      "unmatched": 121,
+      "received_kg": 6826.029186272825,
+      "offered_kg": 11733.864,
+      "received_share": 0.5817375407003887,
+      "mean_received_kg_per_offer": 6.826029186272826,
+      "positive_receipt_share": 0.731,
+      "constraint_violations": 0,
+      "hindsight_oracle_gap_kg_per_offer": 0.8662970978852099,
+      "selected_mean_actual_minutes": 53.319675833472665,
+      "population": "fresh_population_test"
+    },
+    {
+      "method": "LightGBM",
+      "offers": 1000,
+      "selected": 879,
+      "unmatched": 121,
+      "received_kg": 6876.123481611451,
+      "offered_kg": 11733.864,
+      "received_share": 0.586006747786701,
+      "mean_received_kg_per_offer": 6.876123481611451,
+      "positive_receipt_share": 0.741,
+      "constraint_violations": 0,
+      "hindsight_oracle_gap_kg_per_offer": 0.8162028025465843,
+      "selected_mean_actual_minutes": 53.20257773516986,
+      "population": "fresh_population_test"
+    },
+    {
+      "method": "NearestFeasible",
+      "offers": 1000,
+      "selected": 879,
+      "unmatched": 121,
+      "received_kg": 6091.033852394357,
+      "offered_kg": 11733.864,
+      "received_share": 0.5190987259094155,
+      "mean_received_kg_per_offer": 6.091033852394357,
+      "positive_receipt_share": 0.703,
+      "constraint_violations": 0,
+      "hindsight_oracle_gap_kg_per_offer": 1.601292431763678,
+      "selected_mean_actual_minutes": 47.21885030743032,
+      "population": "fresh_population_test"
+    },
+    {
+      "method": "EarliestFeasible",
+      "offers": 1000,
+      "selected": 879,
+      "unmatched": 121,
+      "received_kg": 6146.852046244636,
+      "offered_kg": 11733.864,
+      "received_share": 0.5238557431929189,
+      "mean_received_kg_per_offer": 6.146852046244636,
+      "positive_receipt_share": 0.707,
+      "constraint_violations": 0,
+      "hindsight_oracle_gap_kg_per_offer": 1.5454742379133994,
+      "selected_mean_actual_minutes": 46.107661266884634,
+      "population": "fresh_population_test"
+    },
+    {
+      "method": "HistoryDemand",
+      "offers": 1000,
+      "selected": 879,
+      "unmatched": 121,
+      "received_kg": 6769.521432455546,
+      "offered_kg": 11733.864,
+      "received_share": 0.5769217567593715,
+      "mean_received_kg_per_offer": 6.769521432455546,
+      "positive_receipt_share": 0.729,
+      "constraint_violations": 0,
+      "hindsight_oracle_gap_kg_per_offer": 0.922804851702489,
+      "selected_mean_actual_minutes": 55.81975275591459,
+      "population": "fresh_population_test"
+    },
+    {
+      "method": "NearestUnfiltered",
+      "offers": 1000,
+      "selected": 1000,
+      "unmatched": 0,
+      "received_kg": 2379.766411571943,
+      "offered_kg": 11733.864,
+      "received_share": 0.2028118283603716,
+      "mean_received_kg_per_offer": 2.3797664115719432,
+      "positive_receipt_share": 0.325,
+      "constraint_violations": 615,
+      "hindsight_oracle_gap_kg_per_offer": 5.3125598725860925,
+      "selected_mean_actual_minutes": 41.946796874863665,
+      "population": "fresh_population_test"
+    }
+  ],
+  "candidate_metrics": [
+    {
+      "population": "chronological_test",
+      "method": "RandomForest",
+      "eligible_rows": 3022,
+      "fraction": {
+        "mae": 0.30360592372077555,
+        "rmse": 0.3837747896988112,
+        "r2": 0.14248435367772427
+      },
+      "eta_minutes": {
+        "mae": 6.1513860960057976,
+        "rmse": 9.102172803253474,
+        "r2": 0.7394064030365586
+      }
+    },
+    {
+      "population": "chronological_test",
+      "method": "LightGBM",
+      "eligible_rows": 3022,
+      "fraction": {
+        "mae": 0.3026802924573736,
+        "rmse": 0.3828710971953701,
+        "r2": 0.14651806354811248
+      },
+      "eta_minutes": {
+        "mae": 6.136807979498194,
+        "rmse": 9.10387306673155,
+        "r2": 0.7393090374584632
+      }
+    },
+    {
+      "population": "fresh_population_test",
+      "method": "RandomForest",
+      "eligible_rows": 3379,
+      "fraction": {
+        "mae": 0.2946416629557106,
+        "rmse": 0.3741129998350486,
+        "r2": 0.1664437312719539
+      },
+      "eta_minutes": {
+        "mae": 6.129622357687713,
+        "rmse": 9.28204047530096,
+        "r2": 0.7450842831446878
+      }
+    },
+    {
+      "population": "fresh_population_test",
+      "method": "LightGBM",
+      "eligible_rows": 3379,
+      "fraction": {
+        "mae": 0.29463848504797496,
+        "rmse": 0.37327773706995127,
+        "r2": 0.17016165225470636
+      },
+      "eta_minutes": {
+        "mae": 6.084730193556038,
+        "rmse": 9.238341835509697,
+        "r2": 0.7474788532888501
+      }
+    }
+  ],
+  "real_parcel_eta": {
+    "protocol": {
+      "source": "https://huggingface.co/datasets/Cainiao-AI/LaDe-D",
+      "source_paper": "https://doi.org/10.1145/3637528.3671548",
+      "subset": "delivery_jl, 31415 real parcel orders",
+      "license": "apache-2.0 on publisher dataset card; research use",
+      "target": "minutes from task acceptance to completion, including batching and queuing; not food travel duration",
+      "split": "May\u2013August 2022 train; September validation; October test; group by acceptance date",
+      "cleaning": "Deduplicate order ID; require parseable timestamps, positive elapsed <=1440 minutes and valid stop coordinates. Future/stale/invalid acceptance GPS is missing, not a delivery-location substitute.",
+      "no_ngo_validation": true,
+      "no_domain_transfer": true,
+      "raw_sha256": "ed0296b83d84f739bb91ab3d3cf1a430cf71e3793e25ddf50f88aa3ef34b51fc"
+    },
+    "raw_rows": 31415,
+    "retained_rows": 31357,
+    "excluded_rows": 58,
+    "train_rows": 22880,
+    "validation_rows": 7390,
+    "test_rows": 1087,
+    "test_start": "2022-10-01 07:36:00",
+    "test_end": "2022-10-28 08:54:00",
+    "missing_accept_gps_rows": 957,
+    "selected": {
+      "RandomForest": "RandomForest_10",
+      "LightGBM": "LightGBM_30"
+    },
+    "results": [
+      {
+        "method": "RandomForest",
+        "rows": 1087,
+        "mae_minutes": 123.45408754247066,
+        "rmse_minutes": 177.05062537828843,
+        "r2": -0.04424682231251276
+      },
+      {
+        "method": "LightGBM",
+        "rows": 1087,
+        "mae_minutes": 121.49777905568757,
+        "rmse_minutes": 176.3566797842611,
+        "r2": -0.03607706459536142
+      },
+      {
+        "method": "TrainingMedian",
+        "rows": 1087,
+        "mae_minutes": 146.21251149954003,
+        "rmse_minutes": 199.5021840360215,
+        "r2": -0.3258779283607458
+      },
+      {
+        "method": "HourMedian",
+        "rows": 1087,
+        "mae_minutes": 140.8735050597976,
+        "rmse_minutes": 189.04549072140682,
+        "r2": -0.19053146339596716
+      }
+    ],
+    "selection_sha256": "4859763c6211a3d59b597b27c4e6cf4087157c2b36ba5dde68fd2d1455a84244",
+    "protocol_sha256": "ee3619ebfb5c9f4daf19a737d63af88e2638ac3a1a5d87bf3295c7e9ff336924",
+    "claims": "Real parcel ETA benchmark only. No observed recipient capacity/food safety/alternative NGO outcomes. No real NGO ranking training/test achieved."
+  },
+  "real_ngo_matching_validation": false,
+  "constraints": [
+    "donor confirmation",
+    "food and diet",
+    "NGO and transport storage",
+    "known fresh kg capacity",
+    "vehicle kg capacity",
+    "pickup/receipt/shift windows",
+    "route geometry"
+  ],
+  "max_capacity_report_age_minutes": 120,
+  "allocation": "Single-offer snapshot proposal; no reservation or batch/fleet scheduling",
+  "safety": "Declared operational windows and explicit quality confirmation; no biological spoilage/safety model",
+  "sources": [
+    {
+      "name": "FoodGo external scheduling test instance",
+      "url": "https://doi.org/10.5281/zenodo.3801643",
+      "use": "Constraint benchmark only; no observed outcomes or verified empirical provenance"
+    },
+    {
+      "name": "LaDe-D real parcel deliveries",
+      "url": "https://huggingface.co/datasets/Cainiao-AI/LaDe-D",
+      "use": "Separate real ETA benchmark; no transfer to food ranking"
+    }
+  ]
+}

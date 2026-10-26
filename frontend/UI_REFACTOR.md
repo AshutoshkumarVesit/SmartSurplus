@@ -19,10 +19,12 @@ The frontend is stored as regular source files in the repository, replacing an e
 - Admin role filtering showed 10 NGO records from the 26 seeded accounts.
 - Mobile drawer opened and closed with Escape; a narrow admin table remained within a scrollable container.
 - Map loaded 25 partner markers and 12 tiles. Hiding providers reduced marker count to 10.
-- Research metadata/comparison screens and example loading were inspected; research inference could not be fully verified because of the backend issue below.
+- Research metadata/comparison screens and example loading were inspected; backend inference was subsequently repaired and verified as described below.
 
-## Remaining backend limitation
+## Backend runtime fix verified
 
-The active local environment uses scikit-learn 1.9.0, while saved research estimators were exported with 1.5.2. Measured-waste loading failed on `_RemainderColsList`; NGO ranking inference failed on `SimpleImputer._fill_dtype`. The UI exposes the failed request. Repairing or re-exporting those model artifacts belongs to the backend/research work and is not included in this UI commit.
+The saved research artifacts use scikit-learn 1.5.2. Both dependency files now share exact numerical/model pins, a clean project `.venv` runs the API, and `backend/start.ps1` validates versions before startup. Research loaders reject incompatible versions with HTTP 503 before deserializing estimators. Existing trained model files and reported results are unchanged.
 
-The original GitHub backend does not expose the newer research routes. Basic food entry falls back when `/model-info` is absent; research workspaces explain an unavailable module. Delivery write actions could not be exercised against the current local seed because it has no NGO matches.
+Verification: all 21 local backend tests passed, including replay of all 30 measured-waste test days against frozen predictions, model feature/parity checks, role and constraint validation, and no-mutation checks. Live HTTP inference returned 200 for both RandomForest and LightGBM on measured-waste and NGO-ranking examples. The added standalone serving tests use only the included artifacts, without requiring training datasets.
+
+The branch now includes the two independent research API modules and their verified serving artifacts, so the UI no longer depends on missing research routes. Start the corrected runtime as described in `backend/README.md`. The separate operational surplus catalog/history backend is outside this fix; the basic food-entry fallback remains supported.

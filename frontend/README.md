@@ -46,7 +46,7 @@ The shared `AppShell` and sidebar handle navigation, small-screen drawers and se
 
 The existing basic API supports sign-in, food records, surplus predictions, NGO actions, administration and map data. When `/api/model-info` returns 404, food entry uses the basic food-item form instead of requiring the newer catalog.
 
-The research routes and catalog/history features require the separately developed research-enabled backend and its compatible trained artifacts. A checkout containing only the original backend does not include those experiments. The UI reports an unavailable module explicitly instead of showing invented results. This UI change does not publish research datasets, models or unrelated backend work.
+The backend now includes the independent research routes and their frozen serving artifacts. Install the pinned backend requirements and launch `backend/start.ps1`; see `backend/README.md`. The optional operational surplus catalog/history API remains a separate backend feature. The UI reports unavailable modules explicitly. Training datasets and unrelated backend work are not included.
 
 Surplus and NGO-ranking experiments use synthetic data. The real measured-waste and parcel ETA studies have different targets; their results do not establish field performance for donatable food or certify food safety. Existing limitations remain visible in the interface.
 

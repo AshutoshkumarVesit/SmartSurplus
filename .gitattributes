@@ -1,0 +1,2 @@
+# These manifests hash the exact serving-artifact bytes. Never convert newlines.
+backend/app/ml/artifacts/** -text whitespace=cr-at-eol

@@ -4,6 +4,7 @@ SmartSurplus Backend - FastAPI Main Application
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
+from app.api import measured_waste_routes, ngo_ranking_routes
 from app.api import auth_routes, provider_routes, ngo_routes, admin_routes, map_routes
 
 app = FastAPI(
@@ -27,6 +28,8 @@ app.include_router(provider_routes.router)
 app.include_router(ngo_routes.router)
 app.include_router(admin_routes.router)
 app.include_router(map_routes.router)
+app.include_router(measured_waste_routes.router)
+app.include_router(ngo_ranking_routes.router)
 
 
 @app.get("/")

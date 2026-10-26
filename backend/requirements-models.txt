@@ -1,0 +1,8 @@
+# Frozen runtime used to export the saved research estimators.
+# Update only together with a verified artifact export and prediction parity checks.
+numpy==2.1.3
+pandas==2.2.3
+scipy==1.14.1
+scikit-learn==1.5.2
+joblib==1.4.2
+lightgbm==4.6.0

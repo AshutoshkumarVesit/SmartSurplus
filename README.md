@@ -87,4 +87,4 @@ npm run dev
 
 Start the backend separately on port 8000. For environment configuration, production checks and research API compatibility, see [frontend/README.md](frontend/README.md).
 
-The basic backend supports the operational pages. Catalog/history inputs and the two research workspaces require the separately developed research-enabled API and compatible model artifacts; the UI explains when a module is unavailable.
+The backend includes both research workspaces and frozen serving artifacts. Use the pinned environment and startup instructions in [backend/README.md](backend/README.md). The optional operational surplus catalog/history API remains a separate feature; basic food entry works without it.

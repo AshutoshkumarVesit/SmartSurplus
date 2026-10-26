@@ -1,0 +1,10 @@
+{
+  "source_experiment": "DataSet/research_v4",
+  "sha256": {
+    "LightGBM.joblib": "ff67d867fe8423230fc323430c5bab3bad20729e80a03dc3de36a2e287605ce4",
+    "RandomForest.joblib": "bcc3cb8485b141bd8382862c2038db855647d5354fedf0ca0cd9a9f0aae653ed",
+    "observations.csv": "4251d8cd3c9301743bcf2715015c9e7f2229711639603fb164c4f272f7429f0d",
+    "test_predictions.csv": "419779007c1f13497e8abb3c78e13b7658b9693f77b1f94ac650020f2d71ae08",
+    "metadata.json": "9e89f6d03f69aa09911457715aa88cc077d32d8f4ace640cd1efa70bca824c1c"
+  }
+}

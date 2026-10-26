@@ -1,0 +1,8 @@
+{
+  "sha256": {
+    "RandomForest.joblib": "b9d9ccb8770640c31aa0de5005cd1207d7d23415d96a49c8d78d03b8cc632642",
+    "LightGBM.joblib": "af8da77409487ec35355617017b7358beb2213c4140cc83f319d6f2641008251",
+    "examples.json": "262406db63a44ee9569f13a9945d76b1ca2b35491b36c0f0d56f0988ff6e5b7e",
+    "metadata.json": "841c1754bfc924bded7c6e99099b3874a717b633a023b77e0949f859b0b44e84"
+  }
+}
