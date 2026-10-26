@@ -74,3 +74,17 @@ On startup, the in-memory database seeds:
 ## Additional documentation
 
 See `/SmartSurplus_Documentation.md` for a deeper functional and architecture-level write-up.
+
+## Frontend
+
+The `frontend/` directory contains the complete Next.js UI as regular repository files. It includes a public landing page, authentication, provider/NGO/admin workspaces, responsive navigation and an OpenStreetMap partner map.
+
+```sh
+cd frontend
+npm ci
+npm run dev
+```
+
+Start the backend separately on port 8000. For environment configuration, production checks and research API compatibility, see [frontend/README.md](frontend/README.md).
+
+The basic backend supports the operational pages. Catalog/history inputs and the two research workspaces require the separately developed research-enabled API and compatible model artifacts; the UI explains when a module is unavailable.
