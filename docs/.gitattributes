@@ -1,0 +1,5 @@
+# Preserve byte-exact evidence snapshots and their SHA-256 provenance across OSes.
+research/** -text whitespace=cr-at-eol
+implementation_manifest.json -text whitespace=cr-at-eol
+screenshots/capture_manifest.json -text whitespace=cr-at-eol
+screenshots/*.jpg binary

@@ -1,0 +1,16 @@
+segment,method,rows,mae_kg,rmse_kg,r2
+all_test,RandomForest,30,5.33002982,5.81391441,-0.63088039
+baseline_test,RandomForest,10,5.53765097,6.30685686,-0.08920766
+intervention_test,RandomForest,20,5.22621924,5.55105211,-2.70344929
+all_test,LightGBM,30,4.15917254,4.96408977,-0.18895138
+baseline_test,LightGBM,10,4.68121379,5.95383451,0.02931514
+intervention_test,LightGBM,20,3.89815192,4.38625218,-1.31229366
+all_test,TrainingMedian,30,3.78133333,4.73565201,-0.08204272
+baseline_test,TrainingMedian,10,4.43800000,6.15114623,-0.03608847
+intervention_test,TrainingMedian,20,3.45300000,3.83683463,-0.76930196
+all_test,PreviousMeasuredDay,30,4.44200000,6.67768074,-1.15147421
+baseline_test,PreviousMeasuredDay,10,8.35600000,10.34510512,-1.93058657
+intervention_test,PreviousMeasuredDay,20,2.48500000,3.65739388,-0.60767872
+all_test,Past5DayMean,30,3.36140000,4.75222142,-0.08962780
+baseline_test,Past5DayMean,10,5.90980000,6.84867406,-0.28439242
+intervention_test,Past5DayMean,20,2.08720000,3.22850498,-0.25273357

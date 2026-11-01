@@ -1,0 +1,79 @@
+[
+  {
+    "file": "dataset_index.csv",
+    "local_source": "output/data_used_csv_20261026/dataset_index.csv",
+    "sha256": "b9d7cc104d043787ed2cd71a6b8ea8040d228de7ebefe43dcce81724229de197"
+  },
+  {
+    "file": "column_dictionary.csv",
+    "local_source": "output/data_used_csv_20261026/column_dictionary.csv",
+    "sha256": "91bbf12d4bc0ef56d4468c9e355e53edca3f8acba0a160c2597a44932fbd71eb"
+  },
+  {
+    "file": "ngo_feature_schema.json",
+    "local_source": "DataSet/ngo_matching_v1/feature_schema.json",
+    "sha256": "af50057fe102a17786d017e3d23efed2e3847ff7e0987e8a5fd4b28a5e61da55"
+  },
+  {
+    "file": "ngo_policy_comparison.csv",
+    "local_source": "DataSet/ngo_matching_v1/evaluation/policy_comparison.csv",
+    "sha256": "ead8e847fce3b5ffd400af88f562300271558c5980882c19e796e43c8d410d5f"
+  },
+  {
+    "file": "ngo_selection.json",
+    "local_source": "DataSet/ngo_matching_v1/evaluation/selection_frozen.json",
+    "sha256": "2be74146a6c2e2964d5173f215d78c0a3c118d6800189977317ebae5b9dd6f3a"
+  },
+  {
+    "file": "surplus_selection.json",
+    "local_source": "DataSet/research_v4/evaluation/selection_frozen.json",
+    "sha256": "5feb09b276c5544af112c59c4ddf1c1c3e5b04da81d1c9c3d2ec9f4c76d3711b"
+  },
+  {
+    "file": "surplus_comparison.csv",
+    "local_source": "DataSet/research_v4/evaluation/synthetic_comparison.csv",
+    "sha256": "0331a23f2b51ddee2b0bbbf6e8676e7593fc4736ada9ab9ce6eb737a2a8e557f"
+  },
+  {
+    "file": "measured_waste_comparison.csv",
+    "local_source": "DataSet/research_v4/evaluation/real_comparison.csv",
+    "sha256": "d0aa9f3eac1cac33395c7c2269f822832b1672a5dc3c1a5b43516bce8162d2c0"
+  },
+  {
+    "file": "measured_waste_protocol.json",
+    "local_source": "DataSet/research_v4/evaluation/real_protocol_frozen.json",
+    "sha256": "2baa478ea8520a8f7ae7a6fcf7403eab0f056eab9c280ce080bc1f64930393dc"
+  },
+  {
+    "file": "parcel_eta_comparison.csv",
+    "local_source": "DataSet/ngo_matching_v1/evaluation/real_eta_comparison.csv",
+    "sha256": "55902cc1a17e2ade25281ad409a359ccbd278243d7a29b2318ec0bf1a1587ae4"
+  },
+  {
+    "file": "validation_overview.json",
+    "local_source": "DataSet/research_validation_v1/evaluation/overview.json",
+    "sha256": "43db10cdc011df9ecc25465c5b9e3fe5f8b03bc6fcc3349388984427b3989742"
+  },
+  {
+    "file": "seed_summaries.csv",
+    "local_source": "DataSet/research_validation_v1/evaluation/seed_summaries.csv",
+    "sha256": "9eaeec5064ede10e653a82d9ef25877022b5b8d0c77897e50b6670fbf6470cc6"
+  },
+  {
+    "file": "paired_comparisons.csv",
+    "local_source": "DataSet/research_validation_v1/evaluation/paired_comparisons.csv",
+    "sha256": "a0248f6bce33ca45aad21acfa3bc40572f1122d8ef59dd995f905a77f81c0add"
+  },
+  {
+    "file": "operational_catalog_summary.json",
+    "local_sources": [
+      "backend/app/ml/artifacts/metrics.json",
+      "backend/app/ml/artifacts/random_forest_comparison/metrics.json"
+    ],
+    "transformation": "Selected metadata fields and full test metrics; no retraining",
+    "source_sha256": [
+      "1563df883bd4671419d6675874b62cdfbea1763bcb2f2e5fb51e00ee2a373da4",
+      "92a9e10280b82b58d41e75f4c84f408db4dd59d960b6e84629e39d5e0c6e3911"
+    ]
+  }
+]

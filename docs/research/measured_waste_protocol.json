@@ -1,0 +1,38 @@
+{
+  "source_doi": "10.5281/zenodo.20825233",
+  "license": "cc-by-4.0",
+  "downloaded_sha256": "2ffad746b7ed5d536a0c99c37d8e249230d95d5fb2d041d85d01b69499f99624",
+  "target": "KSW kg: combined kitchen and serving waste; not pure unserved surplus",
+  "purpose": "Separate real-data forecasting benchmark; not a transfer test of full synthetic model",
+  "features": [
+    "MENU",
+    "day_of_week",
+    "month",
+    "day_of_year",
+    "ksw_lag1",
+    "ksw_lag5",
+    "ksw_lag10",
+    "ksw_lag20",
+    "ksw_mean5",
+    "ksw_std5",
+    "ksw_mean20",
+    "ksw_std20",
+    "diners_previous",
+    "diners_mean20"
+  ],
+  "split": "first 20 days history, next 80 train, next 25 validation, final 30 test",
+  "prediction_timing": "before service, menu/calendar and strictly preceding measured days only",
+  "test_history_policy": "one-day-ahead rolling origin; prior test-day observations available the next measured day; no model refit",
+  "intervention": "last 20 of the 30 test days have a reported art intervention",
+  "selection": "minimum validation MAE separately for RF and LightGBM; test not used to choose models",
+  "zero_shot_core_model_test": false,
+  "excluded_inputs": [
+    "same-day DINERS",
+    "same-day plate waste",
+    "waste per diner",
+    "same-day KSW",
+    "phase indicator"
+  ],
+  "missing_target_policy": "One missing KSW on 2024-09-02, in history warmup. Never fabricate a target. Rolling histories skip missing values; remaining feature gaps use training median imputation.",
+  "attribution": "Arja Kuusisto, Jenni Latva and Ella Wilen; Food waste dataset: secondary school in Finland 2024-2025; CC BY 4.0"
+}

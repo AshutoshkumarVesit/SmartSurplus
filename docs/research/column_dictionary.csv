@@ -1,0 +1,263 @@
+file,column,role,model_predictor,data_type,missing_values,data_origin,definition
+surplus_prediction_60000.csv,record_id,metadata_or_history_context_not_predictor,False,object,0,synthetic,Unique synthetic service record ID.
+surplus_prediction_60000.csv,provider_id,metadata_or_history_context_not_predictor,False,object,0,synthetic,"Fictional food-provider ID. Metadata, excluded from the predictor."
+surplus_prediction_60000.csv,service_date,metadata_or_history_context_not_predictor,False,object,0,synthetic,Local date of the tracked menu-item service.
+surplus_prediction_60000.csv,prediction_timestamp,metadata_or_history_context_not_predictor,False,object,0,synthetic,After preparation and before service. All allowed prediction inputs are available by this stage.
+surplus_prediction_60000.csv,enhanced_history_latest_at,metadata_or_history_context_not_predictor,False,object,0,synthetic,Latest service completion timestamp used in enhanced histories; strictly before prediction.
+surplus_prediction_60000.csv,split,partition_metadata,False,object,0,synthetic,Chronological offer-group partition.
+surplus_prediction_60000.csv,data_origin,metadata_or_history_context_not_predictor,False,object,0,synthetic,Explicit synthetic origin for every matching row.
+surplus_prediction_60000.csv,source_reference,metadata_or_history_context_not_predictor,False,object,0,synthetic,Generator assumption set identifier.
+surplus_prediction_60000.csv,provider_type,model_predictor,True,object,0,synthetic,"Scenario kitchen type: canteen, hostel mess, restaurant, hotel or caterer."
+surplus_prediction_60000.csv,city,model_predictor,True,object,0,synthetic,Scenario cluster metadata; not a predictor.
+surplus_prediction_60000.csv,meal_type,model_predictor,True,object,0,synthetic,Lunch or dinner.
+surplus_prediction_60000.csv,food_item_id,model_predictor,True,object,0,synthetic,Tracked menu item ID.
+surplus_prediction_60000.csv,food_category,model_predictor,True,object,0,synthetic,Food category used for demand context and recipient acceptance.
+surplus_prediction_60000.csv,dietary_type,model_predictor,True,object,0,synthetic,Vegetarian or nonvegetarian scenario preference.
+surplus_prediction_60000.csv,required_storage_condition,model_predictor,True,object,0,synthetic,"Scenario handling requirement: hot holding, cold storage or ambient."
+surplus_prediction_60000.csv,planned_event_type,model_predictor,True,object,0,synthetic,"Announced scenario event: none, campus event, conference or community event."
+surplus_prediction_60000.csv,month,model_predictor,True,int64,0,synthetic,"Calendar month number, 1 through 12."
+surplus_prediction_60000.csv,day_of_week,model_predictor,True,int64,0,synthetic,"Calendar weekday, zero for Monday through six for Sunday."
+surplus_prediction_60000.csv,day_of_month,model_predictor,True,int64,0,synthetic,Calendar day number.
+surplus_prediction_60000.csv,holiday_flag,model_predictor,True,int64,0,synthetic,"Simulated closure/holiday calendar, not a verified public-holiday list."
+surplus_prediction_60000.csv,prepared_quantity_kg,model_predictor,True,float64,0,synthetic,Prepared mass observed before service. Upper bound for the unserved surplus target.
+surplus_prediction_60000.csv,expected_customers,model_predictor,True,float64,738,synthetic,Pre-service estimate of consumers of the tracked item. Some reports intentionally missing.
+surplus_prediction_60000.csv,portion_weight_kg,model_predictor,True,float64,0,synthetic,Assumed nominal per-consumer portion for the tracked item.
+surplus_prediction_60000.csv,historical_avg_consumption_kg,model_predictor,True,float64,446,synthetic,Mean consumed kg over up to seven earlier comparable services for this provider/meal/item.
+surplus_prediction_60000.csv,historical_28service_consumption_kg,model_predictor,True,float64,446,synthetic,"Mean consumed kg over up to 28 earlier comparable services, not calendar days."
+surplus_prediction_60000.csv,previous_surplus_kg,model_predictor,True,float64,446,synthetic,Unserved surplus at the last completed comparable service. Missing for a cold context.
+surplus_prediction_60000.csv,historical_surplus_rate,model_predictor,True,float64,446,synthetic,Sum of earlier comparable surplus divided by sum of their preparation mass.
+surplus_prediction_60000.csv,history_observation_count,model_predictor,True,int64,0,synthetic,"Number of earlier comparable services retained, capped at 28."
+surplus_prediction_60000.csv,forecast_temperature_c,model_predictor,True,float64,1034,synthetic,"Imperfect pre-service temperature forecast, with occasional missing reports."
+surplus_prediction_60000.csv,forecast_rain_mm,model_predictor,True,float64,1439,synthetic,"Imperfect pre-service rainfall forecast, with occasional missing reports."
+surplus_prediction_60000.csv,announced_event_size,model_predictor,True,int64,0,synthetic,"Pre-service estimate of event attendees, not realised attendance."
+surplus_prediction_60000.csv,preparation_buffer_pct,model_predictor,True,float64,0,synthetic,"Known preparation buffer after adaptation to past surplus, in percentage points."
+surplus_prediction_60000.csv,menu_price_inr,model_predictor,True,float64,0,synthetic,"Assumed menu price, generated from item portion and dietary type."
+surplus_prediction_60000.csv,provider_capacity_customers,model_predictor,True,int64,0,synthetic,Scenario ceiling for item consumers at the provider.
+surplus_prediction_60000.csv,service_duration_min,model_predictor,True,float64,0,synthetic,"Planned service duration, known before service."
+surplus_prediction_60000.csv,expected_demand_kg,model_predictor,True,float64,738,synthetic,Expected customers multiplied by portion weight.
+surplus_prediction_60000.csv,prepared_minus_expected_kg,model_predictor,True,float64,738,synthetic,Prepared quantity minus expected demand.
+surplus_prediction_60000.csv,prepared_to_expected_ratio,model_predictor,True,float64,738,synthetic,"Prepared quantity divided by expected demand, with a denominator floor of 0.01 kg."
+surplus_prediction_60000.csv,expected_surplus_floor_kg,model_predictor,True,float64,738,synthetic,Positive part of prepared quantity minus expected demand.
+surplus_prediction_60000.csv,preparation_per_expected_customer_kg,model_predictor,True,float64,738,synthetic,"Prepared quantity divided by expected customers, with denominator at least 1."
+surplus_prediction_60000.csv,prepared_minus_historical_kg,model_predictor,True,float64,446,synthetic,Prepared quantity minus the historical average consumption.
+surplus_prediction_60000.csv,history_to_expected_ratio,model_predictor,True,float64,1178,synthetic,"Historical average consumption divided by expected demand, with denominator floor 0.01 kg."
+surplus_prediction_60000.csv,previous_surplus_fraction,model_predictor,True,float64,446,synthetic,Previous surplus divided by prepared quantity with denominator floored at 0.1 kg.
+surplus_prediction_60000.csv,season_sin,model_predictor,True,float64,0,synthetic,Sine of 2*pi*day-of-year/365.25.
+surplus_prediction_60000.csv,season_cos,model_predictor,True,float64,0,synthetic,Cosine of 2*pi*day-of-year/365.25.
+surplus_prediction_60000.csv,provider_utilization_last,model_predictor,True,float64,0,synthetic,Latest completed observed provider consumption/prepared ratio.
+surplus_prediction_60000.csv,provider_utilization_mean4,model_predictor,True,float64,0,synthetic,Mean observed utilization over up to 4 earlier completed provider services.
+surplus_prediction_60000.csv,provider_utilization_mean14,model_predictor,True,float64,0,synthetic,Mean observed utilization over up to 14 earlier completed provider services.
+surplus_prediction_60000.csv,provider_utilization_std14,model_predictor,True,float64,0,synthetic,Population standard deviation of up to 14 earlier provider utilization ratios.
+surplus_prediction_60000.csv,provider_utilization_weighted14,model_predictor,True,float64,0,synthetic,Prepared-mass-weighted utilization over up to 14 earlier provider services.
+surplus_prediction_60000.csv,provider_zero_surplus_share14,model_predictor,True,float64,0,synthetic,Share of up to 14 earlier provider services with utilization >=0.9999.
+surplus_prediction_60000.csv,city_utilization_mean150,model_predictor,True,float64,0,synthetic,Mean utilization of up to 150 earlier completed city services.
+surplus_prediction_60000.csv,city_zero_surplus_share150,model_predictor,True,float64,0,synthetic,Share of up to 150 earlier city services with utilization >=0.9999.
+surplus_prediction_60000.csv,provider_observed_history_count,model_predictor,True,int64,0,synthetic,"Number of services in the provider history buffer, at most 14."
+surplus_prediction_60000.csv,actual_unserved_surplus_kg,training_target,False,float64,0,synthetic,"Prediction target: preparation minus consumed mass, bounded below by zero."
+ngo_matching_60000.csv,offer_id,metadata_or_history_context_not_predictor,False,object,0,synthetic,"Offer-group identifier, never model predictor."
+ngo_matching_60000.csv,candidate_id,metadata_or_history_context_not_predictor,False,object,0,synthetic,"Unique alternative identifier, never predictor."
+ngo_matching_60000.csv,ngo_id,metadata_or_history_context_not_predictor,False,object,0,synthetic,"Fictional NGO identity, never predictor. Fresh test uses disjoint identities."
+ngo_matching_60000.csv,courier_id,metadata_or_history_context_not_predictor,False,object,0,synthetic,"Fictional courier identity, never predictor."
+ngo_matching_60000.csv,decision_at,metadata_or_history_context_not_predictor,False,object,0,synthetic,Timezone-explicit snapshot timestamp.
+ngo_matching_60000.csv,city,metadata_or_history_context_not_predictor,False,object,0,synthetic,Scenario cluster metadata; not a predictor.
+ngo_matching_60000.csv,split,partition_metadata,False,object,0,synthetic,Chronological offer-group partition.
+ngo_matching_60000.csv,quantity_kg,model_predictor,True,float64,0,synthetic,Donor-confirmed donatable offer mass; not forecast surplus.
+ngo_matching_60000.csv,route_distance_km,model_predictor,True,float64,0,synthetic,"Estimated road route length, distinct from straight-line distance."
+ngo_matching_60000.csv,approach_minutes,model_predictor,True,float64,0,synthetic,Known estimated courier-to-donor approach duration.
+ngo_matching_60000.csv,queue_minutes,model_predictor,True,float64,0,synthetic,"Expected courier availability offset after decision, lower bounded at zero."
+ngo_matching_60000.csv,travel_minutes,model_predictor,True,float64,0,synthetic,Route travel estimate known at decision; not actual future time.
+ngo_matching_60000.csv,loading_minutes,model_predictor,True,float64,0,synthetic,Expected donor loading duration.
+ngo_matching_60000.csv,unloading_minutes,model_predictor,True,float64,0,synthetic,Expected receiving handling duration.
+ngo_matching_60000.csv,ready_minutes,model_predictor,True,float64,0,synthetic,Pickup-ready offset relative to decision.
+ngo_matching_60000.csv,pickup_remaining_minutes,model_predictor,True,float64,0,synthetic,Latest permitted pickup offset.
+ngo_matching_60000.csv,delivery_remaining_minutes,model_predictor,True,float64,0,synthetic,Declared recipient-delivery deadline offset; not estimated spoilage.
+ngo_matching_60000.csv,open_minutes,model_predictor,True,float64,0,synthetic,"NGO receiving start offset, may be negative."
+ngo_matching_60000.csv,close_minutes,model_predictor,True,float64,0,synthetic,NGO receiving end offset.
+ngo_matching_60000.csv,shift_remaining_minutes,model_predictor,True,float64,0,synthetic,Courier shift end offset.
+ngo_matching_60000.csv,report_age_minutes,model_predictor,True,float64,0,synthetic,Age of current NGO capacity report; gate requires 0–120 min.
+ngo_matching_60000.csv,recipient_acceptance_rate,model_predictor,True,float64,0,synthetic,Synthetic prior-history smoothed acceptance rate; excludes current receipt.
+ngo_matching_60000.csv,recipient_history_count,model_predictor,True,int64,0,synthetic,Number of simulated prior observations summarized by recipient rate.
+ngo_matching_60000.csv,courier_ontime_rate,model_predictor,True,float64,0,synthetic,Synthetic prior-history smoothed punctuality rate; excludes current job.
+ngo_matching_60000.csv,courier_history_count,model_predictor,True,int64,0,synthetic,Number of simulated prior observations summarized by courier rate.
+ngo_matching_60000.csv,rain_mm,model_predictor,True,float64,0,synthetic,"Current decision-time scenario rain observation, assumed."
+ngo_matching_60000.csv,temperature_c,model_predictor,True,float64,0,synthetic,"Current decision-time scenario temperature, assumed."
+ngo_matching_60000.csv,traffic_index,model_predictor,True,float64,0,synthetic,"Current decision-time scenario traffic multiplier, assumed."
+ngo_matching_60000.csv,demand_kg,model_predictor,True,float64,0,synthetic,NGO reported current quantity needed.
+ngo_matching_60000.csv,capacity_ratio,model_predictor,True,float64,1440,synthetic,Reported available capacity divided by confirmed offer kg.
+ngo_matching_60000.csv,demand_ratio,model_predictor,True,float64,0,synthetic,Reported demand divided by offer kg.
+ngo_matching_60000.csv,nominal_elapsed_minutes,model_predictor,True,float64,0,synthetic,"Deterministic expected receipt offset including readiness, availability, route and opening wait."
+ngo_matching_60000.csv,deadline_slack_minutes,model_predictor,True,float64,0,synthetic,"Minimum of donor delivery deadline, receiving close and courier shift minus nominal receipt time."
+ngo_matching_60000.csv,required_cold,model_predictor,True,int64,0,synthetic,Cold-storage requirement indicator.
+ngo_matching_60000.csv,required_hot,model_predictor,True,int64,0,synthetic,Hot-holding requirement indicator.
+ngo_matching_60000.csv,eligible,eligibility_gate_for_fit,False,bool,0,synthetic,Computed deterministic snapshot gates; not a learned classification target or predictor.
+ngo_matching_60000.csv,rejection_reasons,metadata_or_history_context_not_predictor,False,object,20139,synthetic,Semicolon-separated failed deterministic gates.
+ngo_matching_60000.csv,straight_distance_km,metadata_or_history_context_not_predictor,False,float64,0,synthetic,Haversine donor-to-NGO distance; rule baseline only.
+ngo_matching_60000.csv,actual_elapsed_minutes,training_target,False,float64,0,synthetic,"Simulated potential actual receipt elapsed time; ETA target, never predictor."
+ngo_matching_60000.csv,actual_pickup_minutes,observed_outcome_not_predictor,False,float64,0,synthetic,Simulated potential actual pickup offset; outcome only.
+ngo_matching_60000.csv,actual_received_kg,observed_outcome_not_predictor,False,float64,0,synthetic,Simulated potential accepted mass within operational windows after quality/acceptance uncertainty.
+ngo_matching_60000.csv,received_fraction,training_target,False,float64,0,synthetic,Actual received kg divided by confirmed offer kg; fraction-regression target.
+ngo_matching_60000.csv,actual_timely,observed_outcome_not_predictor,False,bool,0,synthetic,"Hidden potential outcome meets pickup, delivery, receipt and shift windows."
+ngo_matching_60000.csv,actual_receipt_accepted,observed_outcome_not_predictor,False,bool,0,synthetic,Hidden potential recipient acceptance draw; may still yield zero receipt due to deadlines/quality.
+ngo_matching_60000.csv,data_origin,metadata_or_history_context_not_predictor,False,object,0,synthetic,Explicit synthetic origin for every matching row.
+ngo_matching_60000.csv,source_reference,metadata_or_history_context_not_predictor,False,object,0,synthetic,Generator assumption set identifier.
+ngo_matching_fresh_test_10000.csv,offer_id,metadata_or_history_context_not_predictor,False,object,0,synthetic,"Offer-group identifier, never model predictor."
+ngo_matching_fresh_test_10000.csv,candidate_id,metadata_or_history_context_not_predictor,False,object,0,synthetic,"Unique alternative identifier, never predictor."
+ngo_matching_fresh_test_10000.csv,ngo_id,metadata_or_history_context_not_predictor,False,object,0,synthetic,"Fictional NGO identity, never predictor. Fresh test uses disjoint identities."
+ngo_matching_fresh_test_10000.csv,courier_id,metadata_or_history_context_not_predictor,False,object,0,synthetic,"Fictional courier identity, never predictor."
+ngo_matching_fresh_test_10000.csv,decision_at,metadata_or_history_context_not_predictor,False,object,0,synthetic,Timezone-explicit snapshot timestamp.
+ngo_matching_fresh_test_10000.csv,city,metadata_or_history_context_not_predictor,False,object,0,synthetic,Scenario cluster metadata; not a predictor.
+ngo_matching_fresh_test_10000.csv,split,partition_metadata,False,object,0,synthetic,Chronological offer-group partition.
+ngo_matching_fresh_test_10000.csv,quantity_kg,model_predictor,True,float64,0,synthetic,Donor-confirmed donatable offer mass; not forecast surplus.
+ngo_matching_fresh_test_10000.csv,route_distance_km,model_predictor,True,float64,0,synthetic,"Estimated road route length, distinct from straight-line distance."
+ngo_matching_fresh_test_10000.csv,approach_minutes,model_predictor,True,float64,0,synthetic,Known estimated courier-to-donor approach duration.
+ngo_matching_fresh_test_10000.csv,queue_minutes,model_predictor,True,float64,0,synthetic,"Expected courier availability offset after decision, lower bounded at zero."
+ngo_matching_fresh_test_10000.csv,travel_minutes,model_predictor,True,float64,0,synthetic,Route travel estimate known at decision; not actual future time.
+ngo_matching_fresh_test_10000.csv,loading_minutes,model_predictor,True,float64,0,synthetic,Expected donor loading duration.
+ngo_matching_fresh_test_10000.csv,unloading_minutes,model_predictor,True,float64,0,synthetic,Expected receiving handling duration.
+ngo_matching_fresh_test_10000.csv,ready_minutes,model_predictor,True,float64,0,synthetic,Pickup-ready offset relative to decision.
+ngo_matching_fresh_test_10000.csv,pickup_remaining_minutes,model_predictor,True,float64,0,synthetic,Latest permitted pickup offset.
+ngo_matching_fresh_test_10000.csv,delivery_remaining_minutes,model_predictor,True,float64,0,synthetic,Declared recipient-delivery deadline offset; not estimated spoilage.
+ngo_matching_fresh_test_10000.csv,open_minutes,model_predictor,True,float64,0,synthetic,"NGO receiving start offset, may be negative."
+ngo_matching_fresh_test_10000.csv,close_minutes,model_predictor,True,float64,0,synthetic,NGO receiving end offset.
+ngo_matching_fresh_test_10000.csv,shift_remaining_minutes,model_predictor,True,float64,0,synthetic,Courier shift end offset.
+ngo_matching_fresh_test_10000.csv,report_age_minutes,model_predictor,True,float64,0,synthetic,Age of current NGO capacity report; gate requires 0–120 min.
+ngo_matching_fresh_test_10000.csv,recipient_acceptance_rate,model_predictor,True,float64,0,synthetic,Synthetic prior-history smoothed acceptance rate; excludes current receipt.
+ngo_matching_fresh_test_10000.csv,recipient_history_count,model_predictor,True,int64,0,synthetic,Number of simulated prior observations summarized by recipient rate.
+ngo_matching_fresh_test_10000.csv,courier_ontime_rate,model_predictor,True,float64,0,synthetic,Synthetic prior-history smoothed punctuality rate; excludes current job.
+ngo_matching_fresh_test_10000.csv,courier_history_count,model_predictor,True,int64,0,synthetic,Number of simulated prior observations summarized by courier rate.
+ngo_matching_fresh_test_10000.csv,rain_mm,model_predictor,True,float64,0,synthetic,"Current decision-time scenario rain observation, assumed."
+ngo_matching_fresh_test_10000.csv,temperature_c,model_predictor,True,float64,0,synthetic,"Current decision-time scenario temperature, assumed."
+ngo_matching_fresh_test_10000.csv,traffic_index,model_predictor,True,float64,0,synthetic,"Current decision-time scenario traffic multiplier, assumed."
+ngo_matching_fresh_test_10000.csv,demand_kg,model_predictor,True,float64,0,synthetic,NGO reported current quantity needed.
+ngo_matching_fresh_test_10000.csv,capacity_ratio,model_predictor,True,float64,251,synthetic,Reported available capacity divided by confirmed offer kg.
+ngo_matching_fresh_test_10000.csv,demand_ratio,model_predictor,True,float64,0,synthetic,Reported demand divided by offer kg.
+ngo_matching_fresh_test_10000.csv,nominal_elapsed_minutes,model_predictor,True,float64,0,synthetic,"Deterministic expected receipt offset including readiness, availability, route and opening wait."
+ngo_matching_fresh_test_10000.csv,deadline_slack_minutes,model_predictor,True,float64,0,synthetic,"Minimum of donor delivery deadline, receiving close and courier shift minus nominal receipt time."
+ngo_matching_fresh_test_10000.csv,required_cold,model_predictor,True,int64,0,synthetic,Cold-storage requirement indicator.
+ngo_matching_fresh_test_10000.csv,required_hot,model_predictor,True,int64,0,synthetic,Hot-holding requirement indicator.
+ngo_matching_fresh_test_10000.csv,eligible,eligibility_gate_for_fit,False,bool,0,synthetic,Computed deterministic snapshot gates; not a learned classification target or predictor.
+ngo_matching_fresh_test_10000.csv,rejection_reasons,metadata_or_history_context_not_predictor,False,object,3379,synthetic,Semicolon-separated failed deterministic gates.
+ngo_matching_fresh_test_10000.csv,straight_distance_km,metadata_or_history_context_not_predictor,False,float64,0,synthetic,Haversine donor-to-NGO distance; rule baseline only.
+ngo_matching_fresh_test_10000.csv,actual_elapsed_minutes,training_target,False,float64,0,synthetic,"Simulated potential actual receipt elapsed time; ETA target, never predictor."
+ngo_matching_fresh_test_10000.csv,actual_pickup_minutes,observed_outcome_not_predictor,False,float64,0,synthetic,Simulated potential actual pickup offset; outcome only.
+ngo_matching_fresh_test_10000.csv,actual_received_kg,observed_outcome_not_predictor,False,float64,0,synthetic,Simulated potential accepted mass within operational windows after quality/acceptance uncertainty.
+ngo_matching_fresh_test_10000.csv,received_fraction,training_target,False,float64,0,synthetic,Actual received kg divided by confirmed offer kg; fraction-regression target.
+ngo_matching_fresh_test_10000.csv,actual_timely,observed_outcome_not_predictor,False,bool,0,synthetic,"Hidden potential outcome meets pickup, delivery, receipt and shift windows."
+ngo_matching_fresh_test_10000.csv,actual_receipt_accepted,observed_outcome_not_predictor,False,bool,0,synthetic,Hidden potential recipient acceptance draw; may still yield zero receipt due to deadlines/quality.
+ngo_matching_fresh_test_10000.csv,data_origin,metadata_or_history_context_not_predictor,False,object,0,synthetic,Explicit synthetic origin for every matching row.
+ngo_matching_fresh_test_10000.csv,source_reference,metadata_or_history_context_not_predictor,False,object,0,synthetic,Generator assumption set identifier.
+measured_waste_finland_155.csv,DATE,metadata_or_history_context_not_predictor,False,object,0,measured,DATE
+measured_waste_finland_155.csv,MENU,model_predictor,True,int64,0,measured,MENU
+measured_waste_finland_155.csv,KSW kg,training_target,False,float64,1,measured,Observed combined kitchen and serving waste in kg. Not donatable unserved food.
+measured_waste_finland_155.csv,PW kg,observed_outcome_not_predictor,False,float64,0,measured,PW kg
+measured_waste_finland_155.csv,PW g,observed_outcome_not_predictor,False,float64,0,measured,PW g
+measured_waste_finland_155.csv,DINERS,observed_outcome_not_predictor,False,int64,0,measured,DINERS
+measured_waste_finland_155.csv,PW/g/diner,observed_outcome_not_predictor,False,float64,0,measured,PW/g/diner
+measured_waste_finland_155.csv,KSW/g/diner,observed_outcome_not_predictor,False,float64,1,measured,KSW/g/diner
+measured_waste_finland_155.csv,day_of_week,model_predictor,True,int64,0,measured,"Calendar weekday, zero for Monday through six for Sunday."
+measured_waste_finland_155.csv,month,model_predictor,True,int64,0,measured,"Calendar month number, 1 through 12."
+measured_waste_finland_155.csv,day_of_year,model_predictor,True,int64,0,measured,day of year
+measured_waste_finland_155.csv,ksw_lag1,model_predictor,True,float64,2,measured,ksw lag1
+measured_waste_finland_155.csv,ksw_lag5,model_predictor,True,float64,6,measured,ksw lag5
+measured_waste_finland_155.csv,ksw_lag10,model_predictor,True,float64,11,measured,ksw lag10
+measured_waste_finland_155.csv,ksw_lag20,model_predictor,True,float64,21,measured,ksw lag20
+measured_waste_finland_155.csv,ksw_mean5,model_predictor,True,float64,3,measured,ksw mean5
+measured_waste_finland_155.csv,ksw_std5,model_predictor,True,float64,3,measured,ksw std5
+measured_waste_finland_155.csv,ksw_mean20,model_predictor,True,float64,10,measured,ksw mean20
+measured_waste_finland_155.csv,ksw_std20,model_predictor,True,float64,10,measured,ksw std20
+measured_waste_finland_155.csv,diners_previous,model_predictor,True,float64,1,measured,diners previous
+measured_waste_finland_155.csv,diners_mean20,model_predictor,True,float64,20,measured,diners mean20
+measured_waste_finland_155.csv,history_latest_date,metadata_or_history_context_not_predictor,False,object,1,measured,history latest date
+measured_waste_finland_155.csv,source_row,metadata_or_history_context_not_predictor,False,int64,0,measured,source row
+measured_waste_finland_155.csv,phase,metadata_or_history_context_not_predictor,False,object,0,measured,phase
+measured_waste_finland_155.csv,split,partition_metadata,False,object,0,measured,Chronological offer-group partition.
+real_parcel_eta_31357.csv,order_id,metadata_or_history_context_not_predictor,False,int64,0,measured,order id
+real_parcel_eta_31357.csv,region_id,model_predictor,True,int64,0,measured,region id
+real_parcel_eta_31357.csv,city,metadata_or_history_context_not_predictor,False,object,0,measured,Scenario cluster metadata; not a predictor.
+real_parcel_eta_31357.csv,courier_id,metadata_or_history_context_not_predictor,False,int64,0,measured,"Fictional courier identity, never predictor."
+real_parcel_eta_31357.csv,lng,model_predictor,True,float64,0,measured,lng
+real_parcel_eta_31357.csv,lat,model_predictor,True,float64,0,measured,lat
+real_parcel_eta_31357.csv,aoi_id,metadata_or_history_context_not_predictor,False,int64,0,measured,aoi id
+real_parcel_eta_31357.csv,aoi_type,model_predictor,True,int64,0,measured,aoi type
+real_parcel_eta_31357.csv,accept_time,metadata_or_history_context_not_predictor,False,object,0,measured,accept time
+real_parcel_eta_31357.csv,accept_gps_time,metadata_or_history_context_not_predictor,False,object,0,measured,accept gps time
+real_parcel_eta_31357.csv,accept_gps_lng,metadata_or_history_context_not_predictor,False,float64,948,measured,accept gps lng
+real_parcel_eta_31357.csv,accept_gps_lat,metadata_or_history_context_not_predictor,False,float64,948,measured,accept gps lat
+real_parcel_eta_31357.csv,delivery_time,observed_outcome_not_predictor,False,object,0,measured,delivery time
+real_parcel_eta_31357.csv,delivery_gps_time,observed_outcome_not_predictor,False,object,0,measured,delivery gps time
+real_parcel_eta_31357.csv,delivery_gps_lng,observed_outcome_not_predictor,False,float64,0,measured,delivery gps lng
+real_parcel_eta_31357.csv,delivery_gps_lat,observed_outcome_not_predictor,False,float64,0,measured,delivery gps lat
+real_parcel_eta_31357.csv,ds,metadata_or_history_context_not_predictor,False,int64,0,measured,ds
+real_parcel_eta_31357.csv,accept_at,metadata_or_history_context_not_predictor,False,object,0,measured,accept at
+real_parcel_eta_31357.csv,finish_at,observed_outcome_not_predictor,False,object,0,measured,finish at
+real_parcel_eta_31357.csv,gps_at,metadata_or_history_context_not_predictor,False,object,0,measured,gps at
+real_parcel_eta_31357.csv,elapsed,training_target,False,int64,0,measured,"Observed minutes from parcel acceptance to completion, including queuing and batching."
+real_parcel_eta_31357.csv,accept_distance_km,model_predictor,True,float64,957,measured,accept distance km
+real_parcel_eta_31357.csv,gps_missing,model_predictor,True,int64,0,measured,gps missing
+real_parcel_eta_31357.csv,accept_hour,model_predictor,True,float64,0,measured,accept hour
+real_parcel_eta_31357.csv,weekday,model_predictor,True,int64,0,measured,weekday
+real_parcel_eta_31357.csv,month,model_predictor,True,int64,0,measured,"Calendar month number, 1 through 12."
+real_parcel_eta_31357.csv,split,partition_metadata,False,object,0,measured,Chronological offer-group partition.
+surplus_history_warmup.csv,provider_id,metadata_or_history_context_not_predictor,False,object,0,synthetic,"Fictional food-provider ID. Metadata, excluded from the predictor."
+surplus_history_warmup.csv,meal_type,metadata_or_history_context_not_predictor,False,object,0,synthetic,Lunch or dinner.
+surplus_history_warmup.csv,food_item_id,metadata_or_history_context_not_predictor,False,object,0,synthetic,Tracked menu item ID.
+surplus_history_warmup.csv,service_completed_at,metadata_or_history_context_not_predictor,False,object,0,synthetic,Completion time of an exported warmup service used for initial historical features.
+surplus_history_warmup.csv,actual_consumed_kg,observed_outcome_not_predictor,False,float64,0,synthetic,"Simulated consumed mass, capped by preparation. Post-service outcome."
+surplus_history_warmup.csv,actual_unserved_surplus_kg,observed_outcome_not_predictor,False,float64,0,synthetic,"Prediction target: preparation minus consumed mass, bounded below by zero."
+surplus_history_warmup.csv,prepared_quantity_kg,metadata_or_history_context_not_predictor,False,float64,0,synthetic,Prepared mass observed before service. Upper bound for the unserved surplus target.
+surplus_history_warmup.csv,data_origin,metadata_or_history_context_not_predictor,False,object,0,synthetic,Explicit synthetic origin for every matching row.
+surplus_fresh_test_9000.csv,record_id,metadata_or_history_context_not_predictor,False,object,0,synthetic,Unique synthetic service record ID.
+surplus_fresh_test_9000.csv,provider_id,metadata_or_history_context_not_predictor,False,object,0,synthetic,"Fictional food-provider ID. Metadata, excluded from the predictor."
+surplus_fresh_test_9000.csv,service_date,metadata_or_history_context_not_predictor,False,object,0,synthetic,Local date of the tracked menu-item service.
+surplus_fresh_test_9000.csv,prediction_timestamp,metadata_or_history_context_not_predictor,False,object,0,synthetic,After preparation and before service. All allowed prediction inputs are available by this stage.
+surplus_fresh_test_9000.csv,enhanced_history_latest_at,metadata_or_history_context_not_predictor,False,object,0,synthetic,Latest service completion timestamp used in enhanced histories; strictly before prediction.
+surplus_fresh_test_9000.csv,split,partition_metadata,False,object,0,synthetic,Chronological offer-group partition.
+surplus_fresh_test_9000.csv,data_origin,metadata_or_history_context_not_predictor,False,object,0,synthetic,Explicit synthetic origin for every matching row.
+surplus_fresh_test_9000.csv,source_reference,metadata_or_history_context_not_predictor,False,object,0,synthetic,Generator assumption set identifier.
+surplus_fresh_test_9000.csv,provider_type,model_predictor,True,object,0,synthetic,"Scenario kitchen type: canteen, hostel mess, restaurant, hotel or caterer."
+surplus_fresh_test_9000.csv,city,model_predictor,True,object,0,synthetic,Scenario cluster metadata; not a predictor.
+surplus_fresh_test_9000.csv,meal_type,model_predictor,True,object,0,synthetic,Lunch or dinner.
+surplus_fresh_test_9000.csv,food_item_id,model_predictor,True,object,0,synthetic,Tracked menu item ID.
+surplus_fresh_test_9000.csv,food_category,model_predictor,True,object,0,synthetic,Food category used for demand context and recipient acceptance.
+surplus_fresh_test_9000.csv,dietary_type,model_predictor,True,object,0,synthetic,Vegetarian or nonvegetarian scenario preference.
+surplus_fresh_test_9000.csv,required_storage_condition,model_predictor,True,object,0,synthetic,"Scenario handling requirement: hot holding, cold storage or ambient."
+surplus_fresh_test_9000.csv,planned_event_type,model_predictor,True,object,0,synthetic,"Announced scenario event: none, campus event, conference or community event."
+surplus_fresh_test_9000.csv,month,model_predictor,True,int64,0,synthetic,"Calendar month number, 1 through 12."
+surplus_fresh_test_9000.csv,day_of_week,model_predictor,True,int64,0,synthetic,"Calendar weekday, zero for Monday through six for Sunday."
+surplus_fresh_test_9000.csv,day_of_month,model_predictor,True,int64,0,synthetic,Calendar day number.
+surplus_fresh_test_9000.csv,holiday_flag,model_predictor,True,int64,0,synthetic,"Simulated closure/holiday calendar, not a verified public-holiday list."
+surplus_fresh_test_9000.csv,prepared_quantity_kg,model_predictor,True,float64,0,synthetic,Prepared mass observed before service. Upper bound for the unserved surplus target.
+surplus_fresh_test_9000.csv,expected_customers,model_predictor,True,float64,107,synthetic,Pre-service estimate of consumers of the tracked item. Some reports intentionally missing.
+surplus_fresh_test_9000.csv,portion_weight_kg,model_predictor,True,float64,0,synthetic,Assumed nominal per-consumer portion for the tracked item.
+surplus_fresh_test_9000.csv,historical_avg_consumption_kg,model_predictor,True,float64,0,synthetic,Mean consumed kg over up to seven earlier comparable services for this provider/meal/item.
+surplus_fresh_test_9000.csv,historical_28service_consumption_kg,model_predictor,True,float64,0,synthetic,"Mean consumed kg over up to 28 earlier comparable services, not calendar days."
+surplus_fresh_test_9000.csv,previous_surplus_kg,model_predictor,True,float64,0,synthetic,Unserved surplus at the last completed comparable service. Missing for a cold context.
+surplus_fresh_test_9000.csv,historical_surplus_rate,model_predictor,True,float64,0,synthetic,Sum of earlier comparable surplus divided by sum of their preparation mass.
+surplus_fresh_test_9000.csv,history_observation_count,model_predictor,True,int64,0,synthetic,"Number of earlier comparable services retained, capped at 28."
+surplus_fresh_test_9000.csv,forecast_temperature_c,model_predictor,True,float64,176,synthetic,"Imperfect pre-service temperature forecast, with occasional missing reports."
+surplus_fresh_test_9000.csv,forecast_rain_mm,model_predictor,True,float64,211,synthetic,"Imperfect pre-service rainfall forecast, with occasional missing reports."
+surplus_fresh_test_9000.csv,announced_event_size,model_predictor,True,int64,0,synthetic,"Pre-service estimate of event attendees, not realised attendance."
+surplus_fresh_test_9000.csv,preparation_buffer_pct,model_predictor,True,float64,0,synthetic,"Known preparation buffer after adaptation to past surplus, in percentage points."
+surplus_fresh_test_9000.csv,menu_price_inr,model_predictor,True,float64,0,synthetic,"Assumed menu price, generated from item portion and dietary type."
+surplus_fresh_test_9000.csv,provider_capacity_customers,model_predictor,True,int64,0,synthetic,Scenario ceiling for item consumers at the provider.
+surplus_fresh_test_9000.csv,service_duration_min,model_predictor,True,float64,0,synthetic,"Planned service duration, known before service."
+surplus_fresh_test_9000.csv,expected_demand_kg,model_predictor,True,float64,107,synthetic,Expected customers multiplied by portion weight.
+surplus_fresh_test_9000.csv,prepared_minus_expected_kg,model_predictor,True,float64,107,synthetic,Prepared quantity minus expected demand.
+surplus_fresh_test_9000.csv,prepared_to_expected_ratio,model_predictor,True,float64,107,synthetic,"Prepared quantity divided by expected demand, with a denominator floor of 0.01 kg."
+surplus_fresh_test_9000.csv,expected_surplus_floor_kg,model_predictor,True,float64,107,synthetic,Positive part of prepared quantity minus expected demand.
+surplus_fresh_test_9000.csv,preparation_per_expected_customer_kg,model_predictor,True,float64,107,synthetic,"Prepared quantity divided by expected customers, with denominator at least 1."
+surplus_fresh_test_9000.csv,prepared_minus_historical_kg,model_predictor,True,float64,0,synthetic,Prepared quantity minus the historical average consumption.
+surplus_fresh_test_9000.csv,history_to_expected_ratio,model_predictor,True,float64,107,synthetic,"Historical average consumption divided by expected demand, with denominator floor 0.01 kg."
+surplus_fresh_test_9000.csv,previous_surplus_fraction,model_predictor,True,float64,0,synthetic,Previous surplus divided by prepared quantity with denominator floored at 0.1 kg.
+surplus_fresh_test_9000.csv,season_sin,model_predictor,True,float64,0,synthetic,Sine of 2*pi*day-of-year/365.25.
+surplus_fresh_test_9000.csv,season_cos,model_predictor,True,float64,0,synthetic,Cosine of 2*pi*day-of-year/365.25.
+surplus_fresh_test_9000.csv,provider_utilization_last,model_predictor,True,float64,0,synthetic,Latest completed observed provider consumption/prepared ratio.
+surplus_fresh_test_9000.csv,provider_utilization_mean4,model_predictor,True,float64,0,synthetic,Mean observed utilization over up to 4 earlier completed provider services.
+surplus_fresh_test_9000.csv,provider_utilization_mean14,model_predictor,True,float64,0,synthetic,Mean observed utilization over up to 14 earlier completed provider services.
+surplus_fresh_test_9000.csv,provider_utilization_std14,model_predictor,True,float64,0,synthetic,Population standard deviation of up to 14 earlier provider utilization ratios.
+surplus_fresh_test_9000.csv,provider_utilization_weighted14,model_predictor,True,float64,0,synthetic,Prepared-mass-weighted utilization over up to 14 earlier provider services.
+surplus_fresh_test_9000.csv,provider_zero_surplus_share14,model_predictor,True,float64,0,synthetic,Share of up to 14 earlier provider services with utilization >=0.9999.
+surplus_fresh_test_9000.csv,city_utilization_mean150,model_predictor,True,float64,0,synthetic,Mean utilization of up to 150 earlier completed city services.
+surplus_fresh_test_9000.csv,city_zero_surplus_share150,model_predictor,True,float64,0,synthetic,Share of up to 150 earlier city services with utilization >=0.9999.
+surplus_fresh_test_9000.csv,provider_observed_history_count,model_predictor,True,int64,0,synthetic,"Number of services in the provider history buffer, at most 14."
+surplus_fresh_test_9000.csv,actual_unserved_surplus_kg,training_target,False,float64,0,synthetic,"Prediction target: preparation minus consumed mass, bounded below by zero."

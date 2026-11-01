@@ -1,0 +1,254 @@
+{
+  "selected": {
+    "RandomForest_mae_kg": "RF_raw_d14",
+    "RandomForest_rmse_kg": "RF_raw_d14",
+    "LightGBM_mae_kg": "LGB_fraction_l1_regression_l1_15",
+    "LightGBM_rmse_kg": "LGB_raw_regression_15"
+  },
+  "blend_rf_weight": 0.0,
+  "blend_validation_mae_kg": 1.8997489183073324,
+  "selection_data": "old chronological validation only",
+  "old_test_status": "previously used; descriptive reuse",
+  "fresh_seed_test_status": "not generated or evaluated before this selection file",
+  "original_source_sha256": "a2a7f516542f06dc5fb4bc7ba37d708b80a5fe224341311b4ba2bfe1d363d6b7",
+  "candidates": [
+    {
+      "name": "RF_raw_d14",
+      "family": "RandomForest",
+      "form": "raw",
+      "params": {
+        "n_estimators": 180,
+        "max_depth": 14,
+        "min_samples_leaf": 8
+      },
+      "validation": {
+        "mae_kg": 2.057767392007851,
+        "rmse_kg": 2.971369199328471,
+        "r2": 0.21055516089512882
+      }
+    },
+    {
+      "name": "RF_raw_d20",
+      "family": "RandomForest",
+      "form": "raw",
+      "params": {
+        "n_estimators": 180,
+        "max_depth": 20,
+        "min_samples_leaf": 12
+      },
+      "validation": {
+        "mae_kg": 2.0577804878266175,
+        "rmse_kg": 2.9721026824640755,
+        "r2": 0.2101653635284929
+      }
+    },
+    {
+      "name": "RF_fraction",
+      "family": "RandomForest",
+      "form": "fraction_l2",
+      "params": {
+        "n_estimators": 180,
+        "max_depth": 20,
+        "min_samples_leaf": 12
+      },
+      "validation": {
+        "mae_kg": 2.068632042422723,
+        "rmse_kg": 2.971903976113268,
+        "r2": 0.210270972202666
+      }
+    },
+    {
+      "name": "LGB_raw_regression_l1_15",
+      "family": "LightGBM",
+      "form": "raw",
+      "params": {
+        "n_estimators": 600,
+        "num_leaves": 15,
+        "min_child_samples": 60,
+        "objective": "regression_l1",
+        "learning_rate": 0.035,
+        "reg_lambda": 12
+      },
+      "validation": {
+        "mae_kg": 1.9074718054931605,
+        "rmse_kg": 3.156911538392002,
+        "r2": 0.1088857668925377
+      }
+    },
+    {
+      "name": "LGB_raw_regression_l1_31",
+      "family": "LightGBM",
+      "form": "raw",
+      "params": {
+        "n_estimators": 600,
+        "num_leaves": 31,
+        "min_child_samples": 60,
+        "objective": "regression_l1",
+        "learning_rate": 0.035,
+        "reg_lambda": 12
+      },
+      "validation": {
+        "mae_kg": 1.9085705144163059,
+        "rmse_kg": 3.1374812647877874,
+        "r2": 0.11982133408119566
+      }
+    },
+    {
+      "name": "LGB_raw_regression_15",
+      "family": "LightGBM",
+      "form": "raw",
+      "params": {
+        "n_estimators": 600,
+        "num_leaves": 15,
+        "min_child_samples": 60,
+        "objective": "regression",
+        "learning_rate": 0.035,
+        "reg_lambda": 12
+      },
+      "validation": {
+        "mae_kg": 2.016148773810543,
+        "rmse_kg": 2.9680327665716537,
+        "r2": 0.21232703821947752
+      }
+    },
+    {
+      "name": "LGB_raw_regression_31",
+      "family": "LightGBM",
+      "form": "raw",
+      "params": {
+        "n_estimators": 600,
+        "num_leaves": 31,
+        "min_child_samples": 60,
+        "objective": "regression",
+        "learning_rate": 0.035,
+        "reg_lambda": 12
+      },
+      "validation": {
+        "mae_kg": 2.0178189526006522,
+        "rmse_kg": 2.993739469925705,
+        "r2": 0.1986235755293667
+      }
+    },
+    {
+      "name": "LGB_fraction_l1_regression_l1_15",
+      "family": "LightGBM",
+      "form": "fraction_l1",
+      "params": {
+        "n_estimators": 600,
+        "num_leaves": 15,
+        "min_child_samples": 60,
+        "objective": "regression_l1",
+        "learning_rate": 0.035,
+        "reg_lambda": 12
+      },
+      "validation": {
+        "mae_kg": 1.8997489183073324,
+        "rmse_kg": 3.144406000859537,
+        "r2": 0.11593176114904014
+      }
+    },
+    {
+      "name": "LGB_fraction_l1_regression_l1_31",
+      "family": "LightGBM",
+      "form": "fraction_l1",
+      "params": {
+        "n_estimators": 600,
+        "num_leaves": 31,
+        "min_child_samples": 60,
+        "objective": "regression_l1",
+        "learning_rate": 0.035,
+        "reg_lambda": 12
+      },
+      "validation": {
+        "mae_kg": 1.9065725029220015,
+        "rmse_kg": 3.1362162241048623,
+        "r2": 0.12053097168621296
+      }
+    },
+    {
+      "name": "LGB_fraction_l2_regression_15",
+      "family": "LightGBM",
+      "form": "fraction_l2",
+      "params": {
+        "n_estimators": 600,
+        "num_leaves": 15,
+        "min_child_samples": 60,
+        "objective": "regression",
+        "learning_rate": 0.035,
+        "reg_lambda": 12
+      },
+      "validation": {
+        "mae_kg": 2.0314946132453895,
+        "rmse_kg": 2.980184958300782,
+        "r2": 0.20586380205498345
+      }
+    },
+    {
+      "name": "LGB_fraction_l2_regression_31",
+      "family": "LightGBM",
+      "form": "fraction_l2",
+      "params": {
+        "n_estimators": 600,
+        "num_leaves": 31,
+        "min_child_samples": 60,
+        "objective": "regression",
+        "learning_rate": 0.035,
+        "reg_lambda": 12
+      },
+      "validation": {
+        "mae_kg": 2.0281981736807695,
+        "rmse_kg": 2.9890194781737387,
+        "r2": 0.20114851691154123
+      }
+    }
+  ],
+  "features": [
+    "provider_type",
+    "city",
+    "meal_type",
+    "food_item_id",
+    "food_category",
+    "dietary_type",
+    "required_storage_condition",
+    "planned_event_type",
+    "month",
+    "day_of_week",
+    "day_of_month",
+    "holiday_flag",
+    "prepared_quantity_kg",
+    "expected_customers",
+    "portion_weight_kg",
+    "historical_avg_consumption_kg",
+    "historical_28service_consumption_kg",
+    "previous_surplus_kg",
+    "historical_surplus_rate",
+    "history_observation_count",
+    "forecast_temperature_c",
+    "forecast_rain_mm",
+    "announced_event_size",
+    "preparation_buffer_pct",
+    "menu_price_inr",
+    "provider_capacity_customers",
+    "service_duration_min",
+    "expected_demand_kg",
+    "prepared_minus_expected_kg",
+    "prepared_to_expected_ratio",
+    "expected_surplus_floor_kg",
+    "preparation_per_expected_customer_kg",
+    "prepared_minus_historical_kg",
+    "history_to_expected_ratio",
+    "previous_surplus_fraction",
+    "season_sin",
+    "season_cos",
+    "provider_utilization_last",
+    "provider_utilization_mean4",
+    "provider_utilization_mean14",
+    "provider_utilization_std14",
+    "provider_utilization_weighted14",
+    "provider_zero_surplus_share14",
+    "city_utilization_mean150",
+    "city_zero_surplus_share150",
+    "provider_observed_history_count"
+  ],
+  "feature_source_sha256": "b997f776d04da23b118c95040f38c9c5b93371560adcd59b17e90fc104b55580"
+}

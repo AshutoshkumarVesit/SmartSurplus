@@ -1,0 +1,40 @@
+{
+  "features": [
+    "quantity_kg",
+    "route_distance_km",
+    "approach_minutes",
+    "queue_minutes",
+    "travel_minutes",
+    "loading_minutes",
+    "unloading_minutes",
+    "ready_minutes",
+    "pickup_remaining_minutes",
+    "delivery_remaining_minutes",
+    "open_minutes",
+    "close_minutes",
+    "shift_remaining_minutes",
+    "report_age_minutes",
+    "recipient_acceptance_rate",
+    "recipient_history_count",
+    "courier_ontime_rate",
+    "courier_history_count",
+    "rain_mm",
+    "temperature_c",
+    "traffic_index",
+    "demand_kg",
+    "capacity_ratio",
+    "demand_ratio",
+    "nominal_elapsed_minutes",
+    "deadline_slack_minutes",
+    "required_cold",
+    "required_hot"
+  ],
+  "targets": [
+    "received_fraction",
+    "actual_elapsed_minutes"
+  ],
+  "origin": "synthetic",
+  "unit": "one confirmed donation offer \u00d7 one NGO/courier option",
+  "split": "6000 offers \u00d7 10 options; first 210 days train, next 45 validation, final 45 test; group by offer",
+  "assumptions": "All numeric processes assumed. Historical rates are synthetic prior summaries, not empirical observations. Independent snapshots; no fleet/capacity reservation. Declared deadlines are not spoilage estimates."
+}

@@ -1,0 +1,158 @@
+[
+  {
+    "file": "01-homepage.jpg",
+    "pixels": [
+      1012,
+      569
+    ],
+    "sha256": "439911cb58ba42abdd9d309e926893b13474a3065d958df053530fc9b5a28905",
+    "capture_date": "2026-11-01",
+    "browser": "ChatGPT built-in browser",
+    "source": "actual local application",
+    "edited": false
+  },
+  {
+    "file": "02-login.jpg",
+    "pixels": [
+      1012,
+      569
+    ],
+    "sha256": "44887a9beeb2dff78869105bab213551ebc275396e287610fe00c7e2060b5390",
+    "capture_date": "2026-11-01",
+    "browser": "ChatGPT built-in browser",
+    "source": "actual local application",
+    "edited": false
+  },
+  {
+    "file": "03-food-preparation.jpg",
+    "pixels": [
+      810,
+      1016
+    ],
+    "sha256": "3846be192b96b9dfa745879cacf9aa613a52b43c2746d688bedf5750e74b3bbe",
+    "capture_date": "2026-11-01",
+    "browser": "ChatGPT built-in browser",
+    "source": "actual local application",
+    "edited": false
+  },
+  {
+    "file": "04-surplus-prediction.jpg",
+    "pixels": [
+      566,
+      867
+    ],
+    "sha256": "a19406f74ab25929d5531a6da8e9fc566e169b4e33fdc9925744085dca3a3645",
+    "capture_date": "2026-11-01",
+    "browser": "ChatGPT built-in browser",
+    "source": "actual local application",
+    "edited": false
+  },
+  {
+    "file": "05-provider-overview.jpg",
+    "pixels": [
+      1012,
+      569
+    ],
+    "sha256": "20f2e18b559f20e1cec93afa127032b941d14ea452b7cbff83e71d6c0104480e",
+    "capture_date": "2026-11-01",
+    "browser": "ChatGPT built-in browser",
+    "source": "actual local application",
+    "edited": false
+  },
+  {
+    "file": "06-ngo-matching-full.jpg",
+    "pixels": [
+      810,
+      2736
+    ],
+    "sha256": "d5e2aaeb19c742eb2dc42b93379dd4cd09b808053e6885c16e9d6eb4cbd102d9",
+    "capture_date": "2026-11-01",
+    "browser": "ChatGPT built-in browser",
+    "source": "actual local application",
+    "edited": false
+  },
+  {
+    "file": "07-ngo-recommendation.jpg",
+    "pixels": [
+      1012,
+      569
+    ],
+    "sha256": "5cb10796b49aa092765e9b97514c3681823cf653bfdd8e30d72e798acccd5937",
+    "capture_date": "2026-11-01",
+    "browser": "ChatGPT built-in browser",
+    "source": "actual local application",
+    "edited": false
+  },
+  {
+    "file": "08-measured-waste-research.jpg",
+    "pixels": [
+      566,
+      2371
+    ],
+    "sha256": "0ed80b28dfa429f31eb59e51ac6f23a2dcf282b480bc145001f2215bf776912a",
+    "capture_date": "2026-11-01",
+    "browser": "ChatGPT built-in browser",
+    "source": "actual local application",
+    "edited": false
+  },
+  {
+    "file": "09-matching-research-lab.jpg",
+    "pixels": [
+      566,
+      2624
+    ],
+    "sha256": "b10e17b28abae1e4ffbb6f89294a9c2a1ecca91d2a0f7a5b100d473492ae9564",
+    "capture_date": "2026-11-01",
+    "browser": "ChatGPT built-in browser",
+    "source": "actual local application",
+    "edited": false
+  },
+  {
+    "file": "10-network-map.jpg",
+    "pixels": [
+      566,
+      1072
+    ],
+    "sha256": "c4020ee11ec5b7a7000f08f93c52e552595e5423099e3c119f3f0df50d4530d6",
+    "capture_date": "2026-11-01",
+    "browser": "ChatGPT built-in browser",
+    "source": "actual local application",
+    "edited": false
+  },
+  {
+    "file": "11-ngo-overview.jpg",
+    "pixels": [
+      566,
+      767
+    ],
+    "sha256": "c0e5fc40f9a264c881043f43033fa57a6cc735046f7459bb8fc828adb592708d",
+    "capture_date": "2026-11-01",
+    "browser": "ChatGPT built-in browser",
+    "source": "actual local application",
+    "edited": false
+  },
+  {
+    "file": "12-ngo-availability.jpg",
+    "pixels": [
+      566,
+      976
+    ],
+    "sha256": "f3eacc7b03b4719033c6f2370a2c14d6b0c12fb97d5f7bcd0da2fa2d74ce40f3",
+    "capture_date": "2026-11-01",
+    "browser": "ChatGPT built-in browser",
+    "source": "actual local application",
+    "edited": false
+  },
+  {
+    "file": "13-admin-overview.jpg",
+    "pixels": [
+      566,
+      1526
+    ],
+    "sha256": "4bf6f4223c9c4148c002a58c3b5918e77dfc87022af80e6ee53bc2cf4d35d1e3",
+    "capture_date": "2026-11-01",
+    "browser": "ChatGPT built-in browser",
+    "source": "actual local application",
+    "edited": false
+  }
+]

@@ -1,0 +1,109 @@
+{
+  "protocol_sha256": "0f3fb5aaef35d0f2f0601efe256959a6dd9911e34f89257c5c69dfbec538cca0",
+  "full_models_not_retrained": true,
+  "ablation_manifest_sha256": "346be61d993e5902cb47c3ef6e3251622feee281f413a93f82930a6bff5a7cd3",
+  "generated_surplus_populations": 16,
+  "surplus_test_conditions": 22,
+  "surplus_test_rows": 198000,
+  "ngo_conditions": 70,
+  "ngo_offers": 24000,
+  "batch_cases": 120,
+  "milp_solves": 240,
+  "certified_solver_success": 239,
+  "max_reported_mip_gap": 0.018952591543333,
+  "ngo_gated_constraint_violations": 0,
+  "batch_constraint_violations": 0,
+  "uncertainty": "Fixed-model simulator-seed variability only. Percentile intervals are descriptive; 3-seed surplus stresses have limited precision. Many comparisons, no confirmatory p-values or multiplicity-adjusted claims.",
+  "conclusions": [
+    {
+      "task": "surplus",
+      "comparison": "LightGBM_FullHistory versus LightGBM_NoHistory",
+      "mean": 0.18525086594647222,
+      "unit": "kg per service",
+      "low95": 0.17425702894944514,
+      "high95": 0.19559421997103574,
+      "reading": "positive across descriptive interval"
+    },
+    {
+      "task": "surplus",
+      "comparison": "LightGBM_FullHistory versus LightGBM_PreparationNoHistory",
+      "mean": 0.17482290579295184,
+      "unit": "kg per service",
+      "low95": 0.16440815040346532,
+      "high95": 0.18590027549274377,
+      "reading": "positive across descriptive interval"
+    },
+    {
+      "task": "surplus",
+      "comparison": "LightGBM_FullHistory versus RandomForest_FullHistory",
+      "mean": 0.14972804340431026,
+      "unit": "kg per service",
+      "low95": 0.1330904984248952,
+      "high95": 0.1659877593591545,
+      "reading": "positive across descriptive interval"
+    },
+    {
+      "task": "surplus",
+      "comparison": "LightGBM_FullHistory versus OriginalMedian",
+      "mean": 0.2797082041519351,
+      "unit": "kg per service",
+      "low95": 0.2598950070540132,
+      "high95": 0.3037263635129692,
+      "reading": "positive across descriptive interval"
+    },
+    {
+      "task": "surplus",
+      "comparison": "LightGBM_PreparationNoHistory versus LightGBM_NoHistory",
+      "mean": 0.010427960153520367,
+      "unit": "kg per service",
+      "low95": 0.002669884678753313,
+      "high95": 0.01949715579231589,
+      "reading": "positive across descriptive interval"
+    },
+    {
+      "task": "ngo",
+      "comparison": "LightGBM versus NearestFeasible",
+      "mean": 5.732151637326859,
+      "unit": "percentage points",
+      "low95": 4.890917517361604,
+      "high95": 6.586517555542978,
+      "reading": "positive across descriptive interval"
+    },
+    {
+      "task": "ngo",
+      "comparison": "LightGBM versus EarliestFeasible",
+      "mean": 5.0410528044691665,
+      "unit": "percentage points",
+      "low95": 4.283285239025615,
+      "high95": 5.761196025490338,
+      "reading": "positive across descriptive interval"
+    },
+    {
+      "task": "ngo",
+      "comparison": "LightGBM versus HistoryDemand",
+      "mean": 1.2947106133460315,
+      "unit": "percentage points",
+      "low95": 0.7695938936272996,
+      "high95": 1.7735848073897573,
+      "reading": "positive across descriptive interval"
+    },
+    {
+      "task": "ngo",
+      "comparison": "LightGBM versus LightGBM_NoHistory",
+      "mean": 1.8088011144744023,
+      "unit": "percentage points",
+      "low95": 1.1107869462797182,
+      "high95": 2.5889831790146216,
+      "reading": "positive across descriptive interval"
+    },
+    {
+      "task": "ngo",
+      "comparison": "LightGBM versus RandomForest",
+      "mean": 0.19265812202939325,
+      "unit": "percentage points",
+      "low95": -0.24725393005227517,
+      "high95": 0.6447064544638234,
+      "reading": "interval crosses zero"
+    }
+  ]
+}

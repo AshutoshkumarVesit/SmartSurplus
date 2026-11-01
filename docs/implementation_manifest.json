@@ -1,0 +1,78 @@
+{
+  "inspection_date": "2026-11-01",
+  "scope": "Actual local source used for browser captures; hashes identify code contents, not a claim that all local changes are published.",
+  "files": [
+    {
+      "path": "backend/app/main.py",
+      "sha256": "db0865097bcb6bfc3c5e7f377c2d3e81e0ecf6cf041ab84768adbf220e21667e"
+    },
+    {
+      "path": "backend/app/core/database.py",
+      "sha256": "b5e55df806976d90a87211a33cf0ea8e58b94383b1cd7a8ee81af22d6517ea27"
+    },
+    {
+      "path": "backend/app/core/auth.py",
+      "sha256": "e094abf2bcf809f6d3b996e511d45020663e775a2866de0666e9472815d50ebe"
+    },
+    {
+      "path": "backend/app/models/schemas.py",
+      "sha256": "031b1e60ac0ff9a45af0783eb9c7fe394f020210935cba902c7eb962727e27f4"
+    },
+    {
+      "path": "backend/app/models/platform_matching.py",
+      "sha256": "856f00cfafa8a070777ee684197d49377846dbb3c9f8e835566518daab1569da"
+    },
+    {
+      "path": "backend/app/services/prediction_service.py",
+      "sha256": "cf5530241a89ff1c8b46fbeb9397085d5a1dc8f4d734967f150df8bfafe72f05"
+    },
+    {
+      "path": "backend/app/ml/features.py",
+      "sha256": "eec3b74b52a148fd267ad058b36de66732bf5db9e2a8641befcddafa42315d6d"
+    },
+    {
+      "path": "backend/app/ml/ngo_ranker.py",
+      "sha256": "59535b9a4dcd1352051f5665294fd7f450151e0ae492ef0fb47099b623259ce1"
+    },
+    {
+      "path": "backend/app/services/platform_matching_service.py",
+      "sha256": "ac9d39b7c34f8733898292492d5f67205489590413d068ea66a0be3f35c92aa0"
+    },
+    {
+      "path": "backend/app/services/ngo_ranking_service.py",
+      "sha256": "d52e3db58cfd352ab2a8ab5b62a49ebb96ea4668c862db205f39f976a191cf7c"
+    },
+    {
+      "path": "backend/app/services/measured_waste_service.py",
+      "sha256": "bb51c28d49e12de24f599ff78caded00eb2fb6c86cb3d7232503975b4cb687da"
+    },
+    {
+      "path": "backend/app/services/analytics_service.py",
+      "sha256": "7d84de0104e5a22aab1c6a793dfaa745048b415bc13c0993808bfd22a02dea3c"
+    },
+    {
+      "path": "backend/app/api/ngo_routes.py",
+      "sha256": "6dbed5f5383adb7a5bce5dc9c7d9a5b374b84072e75e79ebedb6c71e8ed71f8a"
+    },
+    {
+      "path": "frontend/src/lib/api.ts",
+      "sha256": "83b5b9e8c3d695cbc5c9524eda3e9a40f78ceeb7a82271defd20a81c7f441bff"
+    },
+    {
+      "path": "frontend/src/lib/auth.tsx",
+      "sha256": "a4dbbfe1db07e0e521532f7123d191c34271b7a8fd1d11da9aef493ec2edfed4"
+    },
+    {
+      "path": "frontend/src/app/dashboard/provider/upload/page.tsx",
+      "sha256": "e9945d1f905089df60a5b974955628e4521ca97c481f62033777536131fc3c28"
+    },
+    {
+      "path": "frontend/src/app/dashboard/provider/matching/page.tsx",
+      "sha256": "e4613de85323a3f4067b43e21f89cefd5b8cf28675b6d7d6cc4059926762492b"
+    },
+    {
+      "path": "frontend/src/components/NetworkMap.tsx",
+      "sha256": "699aba677491a82d112058391abca625dec475d71b2cf759a565a329dcccabd2"
+    }
+  ]
+}

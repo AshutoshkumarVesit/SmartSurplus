@@ -1,0 +1,77 @@
+{
+  "selected_model": "LightGBM",
+  "model_format": "lightgbm",
+  "features": [
+    "quantity_kg",
+    "carry_in_kg",
+    "forecast_kg",
+    "historical_avg_consumption",
+    "historical_28day_consumption",
+    "item_id",
+    "city_id",
+    "venue_type_id",
+    "locality_type_id",
+    "shelf_life_hours",
+    "unit_weight_kg",
+    "base_price_inr",
+    "dow",
+    "month",
+    "day_of_month",
+    "is_weekend",
+    "lag1_sold_kg",
+    "lag7_sold_kg",
+    "roll7_surplus_rate",
+    "roll28_surplus_rate"
+  ],
+  "counts": {
+    "train": 9238272,
+    "validation": 1566291,
+    "test": 1551735
+  },
+  "split": {
+    "train": "2024-10-01 through 2026-03-31",
+    "validation": "2026-04-01 through 2026-06-30",
+    "test": "2026-07-01 through 2026-09-30"
+  },
+  "test": {
+    "mae_kg": 1.21056182285836,
+    "rmse_kg": 2.6326305483422865,
+    "r2": 0.5375210998390745
+  },
+  "cold_history_test": {
+    "mae_kg": 1.3353951599309837,
+    "rmse_kg": 2.8107210475261337,
+    "r2": 0.4728337693599519
+  },
+  "historical_baseline_test": {
+    "mae_kg": 1.695712349160491,
+    "rmse_kg": 3.918115775440041,
+    "r2": -0.02439304242155349
+  },
+  "test_interval_coverage": 0.9012099359748926,
+  "interval_abs_error_90_kg": 2.7106442289062684,
+  "risk_agreement": 0.49271686209307647,
+  "versions": {
+    "python": "3.12.5",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "sklearn": "1.9.0",
+    "lightgbm": "4.6.0"
+  },
+  "random_forest_comparison": {
+    "method_note": "Additional full-data benchmark after the original model selection. Same inputs/splits/targets; algorithm-specific preprocessing and fixed bounded configurations. No test-based tuning or significance claim.",
+    "test_previously_evaluated_for_lightgbm": true,
+    "verification": {
+      "saved_random_forest_reload_predictions_match": true,
+      "lightgbm_metrics_reproduced": true,
+      "input_hashes_verified": true,
+      "all_split_rows_used": true
+    }
+  },
+  "random_forest_test": {
+    "mae_kg": 1.2226709647261205,
+    "rmse_kg": 2.573835830509957,
+    "r2": 0.5579475768407716
+  },
+  "target": "surplus_kg (post-reuse, pre-disposal)"
+}

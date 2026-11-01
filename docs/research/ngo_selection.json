@@ -1,0 +1,210 @@
+{
+  "selected": {
+    "RandomForest": "RF_leaf20",
+    "LightGBM": "LGB_leaf15"
+  },
+  "candidates": [
+    {
+      "name": "RF_leaf8",
+      "family": "RandomForest",
+      "params": {
+        "n_estimators": 140,
+        "max_depth": 16,
+        "min_samples_leaf": 8
+      },
+      "validation_fraction": {
+        "mae": 0.3039061148187998,
+        "rmse": 0.38215855567787116,
+        "r2": 0.16073788400837674
+      },
+      "validation_eta_minutes": {
+        "mae": 6.171753739420749,
+        "rmse": 9.03843135641688,
+        "r2": 0.7562296048005225
+      }
+    },
+    {
+      "name": "RF_leaf20",
+      "family": "RandomForest",
+      "params": {
+        "n_estimators": 140,
+        "max_depth": 14,
+        "min_samples_leaf": 20
+      },
+      "validation_fraction": {
+        "mae": 0.30221956719388315,
+        "rmse": 0.38000871561610094,
+        "r2": 0.17015389361549627
+      },
+      "validation_eta_minutes": {
+        "mae": 6.129289942999757,
+        "rmse": 8.99206020434304,
+        "r2": 0.7587244883885909
+      }
+    },
+    {
+      "name": "LGB_leaf15",
+      "family": "LightGBM",
+      "params": {
+        "n_estimators": 300,
+        "num_leaves": 15,
+        "min_child_samples": 50,
+        "learning_rate": 0.035,
+        "reg_lambda": 8
+      },
+      "validation_fraction": {
+        "mae": 0.3026098416597994,
+        "rmse": 0.37995715910864,
+        "r2": 0.17037905194963987
+      },
+      "validation_eta_minutes": {
+        "mae": 6.078935188684295,
+        "rmse": 8.983042517858463,
+        "r2": 0.7592081719709807
+      }
+    },
+    {
+      "name": "LGB_leaf31",
+      "family": "LightGBM",
+      "params": {
+        "n_estimators": 300,
+        "num_leaves": 31,
+        "min_child_samples": 70,
+        "learning_rate": 0.035,
+        "reg_lambda": 12
+      },
+      "validation_fraction": {
+        "mae": 0.3008813092507186,
+        "rmse": 0.380763829342226,
+        "r2": 0.1668526494868927
+      },
+      "validation_eta_minutes": {
+        "mae": 6.12240608874738,
+        "rmse": 9.05773971608221,
+        "r2": 0.7551869827478886
+      }
+    }
+  ],
+  "default_policy": "LightGBM",
+  "validation_policies": [
+    {
+      "method": "RandomForest",
+      "offers": 900,
+      "selected": 784,
+      "unmatched": 116,
+      "received_kg": 6163.65497875576,
+      "offered_kg": 10657.747,
+      "received_share": 0.5783262615218545,
+      "mean_received_kg_per_offer": 6.848505531950844,
+      "positive_receipt_share": 0.7222222222222222,
+      "constraint_violations": 0,
+      "hindsight_oracle_gap_kg_per_offer": 1.0022353900524428,
+      "selected_mean_actual_minutes": 52.80795131771734
+    },
+    {
+      "method": "LightGBM",
+      "offers": 900,
+      "selected": 784,
+      "unmatched": 116,
+      "received_kg": 6178.896535072783,
+      "offered_kg": 10657.747,
+      "received_share": 0.5797563532961313,
+      "mean_received_kg_per_offer": 6.865440594525315,
+      "positive_receipt_share": 0.7222222222222222,
+      "constraint_violations": 0,
+      "hindsight_oracle_gap_kg_per_offer": 0.9853003274779722,
+      "selected_mean_actual_minutes": 52.50220902507439
+    },
+    {
+      "method": "NearestFeasible",
+      "offers": 900,
+      "selected": 784,
+      "unmatched": 116,
+      "received_kg": 5410.10020863185,
+      "offered_kg": 10657.747,
+      "received_share": 0.507621377072645,
+      "mean_received_kg_per_offer": 6.011222454035389,
+      "positive_receipt_share": 0.6688888888888889,
+      "constraint_violations": 0,
+      "hindsight_oracle_gap_kg_per_offer": 1.8395184679678975,
+      "selected_mean_actual_minutes": 47.33937572687115
+    },
+    {
+      "method": "EarliestFeasible",
+      "offers": 900,
+      "selected": 784,
+      "unmatched": 116,
+      "received_kg": 5537.960573443218,
+      "offered_kg": 10657.747,
+      "received_share": 0.5196183183409419,
+      "mean_received_kg_per_offer": 6.15328952604802,
+      "positive_receipt_share": 0.68,
+      "constraint_violations": 0,
+      "hindsight_oracle_gap_kg_per_offer": 1.6974513959552668,
+      "selected_mean_actual_minutes": 45.80529776588873
+    },
+    {
+      "method": "HistoryDemand",
+      "offers": 900,
+      "selected": 784,
+      "unmatched": 116,
+      "received_kg": 6097.810890530735,
+      "offered_kg": 10657.747,
+      "received_share": 0.5721482120499516,
+      "mean_received_kg_per_offer": 6.7753454339230395,
+      "positive_receipt_share": 0.7044444444444444,
+      "constraint_violations": 0,
+      "hindsight_oracle_gap_kg_per_offer": 1.0753954880802474,
+      "selected_mean_actual_minutes": 55.58360249503731
+    },
+    {
+      "method": "NearestUnfiltered",
+      "offers": 900,
+      "selected": 900,
+      "unmatched": 0,
+      "received_kg": 2041.6662800881932,
+      "offered_kg": 10657.747,
+      "received_share": 0.19156640517814819,
+      "mean_received_kg_per_offer": 2.2685180889868812,
+      "positive_receipt_share": 0.30777777777777776,
+      "constraint_violations": 554,
+      "hindsight_oracle_gap_kg_per_offer": 5.582222833016406,
+      "selected_mean_actual_minutes": 41.82055069375733
+    }
+  ],
+  "selection": "Within each family minimum validation received-fraction RMSE; default policy maximum validation received kg. No test tuning.",
+  "policy": "argmax estimated_received_fraction - 0.001 * predicted_elapsed_minutes, after deterministic gates",
+  "data_sha256": "f5aa46fa94aa57b91dd407dfbaeed0abb8f384b8a08143c94fdd4730e626b451",
+  "features": [
+    "quantity_kg",
+    "route_distance_km",
+    "approach_minutes",
+    "queue_minutes",
+    "travel_minutes",
+    "loading_minutes",
+    "unloading_minutes",
+    "ready_minutes",
+    "pickup_remaining_minutes",
+    "delivery_remaining_minutes",
+    "open_minutes",
+    "close_minutes",
+    "shift_remaining_minutes",
+    "report_age_minutes",
+    "recipient_acceptance_rate",
+    "recipient_history_count",
+    "courier_ontime_rate",
+    "courier_history_count",
+    "rain_mm",
+    "temperature_c",
+    "traffic_index",
+    "demand_kg",
+    "capacity_ratio",
+    "demand_ratio",
+    "nominal_elapsed_minutes",
+    "deadline_slack_minutes",
+    "required_cold",
+    "required_hot"
+  ],
+  "generated_test_status": "fresh seed not yet generated",
+  "fresh_seed": 55109
+}

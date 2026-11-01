@@ -1,0 +1,17 @@
+population,method,rows,mae_kg,rmse_kg,r2
+reused_v3_test,RandomForest_mae_kg,9000,2.11995612,3.08413080,0.22779976
+reused_v3_test,RandomForest_rmse_kg,9000,2.11995612,3.08413080,0.22779976
+reused_v3_test,LightGBM_mae_kg,9000,1.99497658,3.22665012,0.15478322
+reused_v3_test,LightGBM_rmse_kg,9000,2.10815206,3.08158256,0.22907528
+reused_v3_test,Blend_MAE,9000,1.99497658,3.22665012,0.15478322
+reused_v3_test,Original_RandomForest,9000,2.23077740,3.19668436,0.17040931
+reused_v3_test,Original_LightGBM,9000,2.16083398,3.35833105,0.08438823
+reused_v3_test,TrainingMedian,9000,2.30999767,3.74017030,-0.13565681
+fresh_seed_88421_test,RandomForest_mae_kg,9000,1.93299787,2.89458014,0.21853799
+fresh_seed_88421_test,RandomForest_rmse_kg,9000,1.93299787,2.89458014,0.21853799
+fresh_seed_88421_test,LightGBM_mae_kg,9000,1.78518547,3.05407947,0.13004381
+fresh_seed_88421_test,LightGBM_rmse_kg,9000,1.92224480,2.90363543,0.21364095
+fresh_seed_88421_test,Blend_MAE,9000,1.78518547,3.05407947,0.13004381
+fresh_seed_88421_test,Original_RandomForest,9000,2.06176558,3.01575977,0.15173763
+fresh_seed_88421_test,Original_LightGBM,9000,1.96385850,3.17987751,0.05690054
+fresh_seed_88421_test,TrainingMedian,9000,2.04057822,3.39653410,-0.07599108
